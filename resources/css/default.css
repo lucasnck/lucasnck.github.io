@@ -198,7 +198,7 @@ a, a:hover {
   width: 100%;
   height: 100%;
   background-color: #FFFFFF;
-  background: linear-gradient(306deg, #ffffff, #000000, #333333, #ffffff);
+  background: linear-gradient(306deg, #ffffff, #c0c0c0, #d3d3d3, #000000);
   background-size: 800% 800%;
   -webkit-animation: background-gradient 10s ease infinite;
   -moz-animation: background-gradient 10s ease infinite;
