@@ -1,7 +1,7 @@
 # lucasnck.github.io
 Lucas Ribeiro Portfolio using TypeScript, jQuery, HMTL5, SASS
 <h1>Please:</h1>
-<p>If you use this portfolio to create your own, make sure your keep the copyrights</p>
+<p>If you use this portfolio to create your own, <b>keep the copyrights</b></p>
 
 <h1>Cloning:</h1>
 <ul>
