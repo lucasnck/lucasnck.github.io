@@ -78,6 +78,11 @@ $secondaryFontFamily: 'Dosis', sans-serif;
         @content;	
     }
 }
+@mixin sm-up() {
+    @media (min-width: 768px) {
+        @content;	
+    }
+}
 @mixin sm-down() {
     @media (max-width: 767px) {
         @content;	

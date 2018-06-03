@@ -35,6 +35,11 @@ var menu = [
 
         "title": "Formação Acadêmica",
         "link": "#academic"
+    },
+    {
+
+        "title": "Idiomas",
+        "link": "#languages"
     }
 
 ]
@@ -159,15 +164,6 @@ var skills = [
     },
     {
 
-        "name": "React",
-        "type": "Front-end",
-        "technologyType": "Javascript Framework",
-        "knowledgePercentage": 10,
-        "description": "",
-        "experience": "2 meses"
-    },
-    {
-
         "name": "jQuery",
         "type": "Front-end",
         "technologyType": "Javascript Library",
@@ -189,46 +185,58 @@ var skills = [
 var projects = [
     {
         "name": "FARMUP",
-        "technologies": "Java, JSF, Hibernate, CriteriaAPI, JPA, Bootstrap4, SASS, XHMTL",
-        "description": "teste",
+        "type": "Back-end",
+        "logo": "resources/img/projects/farmup.png",
+        "technologies": "Java, JSF, Hibernate, CriteriaAPI, JPA, Bootstrap4, SASS, XHMTL, jQuery, Typescript, Primefaces, PostgreSQL, Font Awesome, DigitalOcean, Ubuntu",
+        "description": "ERP para agropecuária",
         "category": "autônomo",
-        "link": "http://teste.com",
+        "link": "http://farmup.com.br",
         "status": "Em desenvolvimento"
     },
     {
         "name": "UCODE",
+        "type": "Back-end",
+        "logo": "resources/img/projects/ucode.png",
         "technologies": "Java, JSF, Hibernate, CriteriaAPI, JPA, Bootstrap4, SASS, XHMTL",
-        "description": "teste",
+        "description": "Sistema para auxiliar no desenvolvimento de projetos",
         "category": "autônomo",
         "link": "http://teste.com",
         "status": "Em desenvolvimento"
     },
     {
         "name": "MAGE API",
-        "technologies": "JavaScript, Typescript, React, JSON",
-        "description": "teste",
+        "type": "Front-end",
+        "logo": "resources/img/favicon.png",
+        "technologies": "JavaScript, Typescript, React, JSON, HTML5, SASS",
+        "description": "The new way to make requests in API",
         "category": "autônomo",
         "link": "http://teste.com",
         "status": "Em desenvolvimento"
     },
     {
         "name": "eXparser",
+        "type": "Back-end",
+        "logo": "resources/img/projects/exparser.png",
         "technologies": "Java",
-        "description": "teste",
+        "description": "Simple XML and XHTML parser for a Java Abstract Tree",
         "category": "autônomo",
-        "link": "http://teste.com",
+        "link": "https://github.com/lucasnck/eXparser",
         "status": "Concluído"
     },
     {
         "name": "ProjectParser",
+        "type": "Back-end",
+        "logo": "resources/img/projects/projectparser.png",
         "technologies": "Java",
-        "description": "teste",
+        "description": "API for create and update files structures of a project object",
         "category": "autônomo",
-        "link": "http://teste.com",
+        "link": "https://github.com/lucasnck/ProjectParser",
         "status": "concluído"
     },
     {
         "name": "Berve Enxovais",
+        "type": "Front-end",
+        "logo": "https://images.tcdn.com.br/605938/themes/56/img/logo-berve-horizontal.png",
         "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
         "description": "teste",
         "category": "Admake",
@@ -240,6 +248,7 @@ var projects = [
 var jobs = [
     {
         "name": "Admake",
+        "logo": "resources/img/jobs/admake.svg",
         "post": "Desenvolvedor front-end",
         "description": "",
         "category": "CLT",
@@ -267,6 +276,17 @@ var academic = [
         "workload": 80,
         "start": "2018",
         "end": ""
+    }
+]
+
+var languages = [
+    {
+        "name": "Português",
+        "level": "Nativo",
+    },
+    {
+        "name": "Inglês",
+        "level": "Técnico",
     }
 ]
 
@@ -362,6 +382,136 @@ class Components {
         return null;
     }
 
+    static changeDevtype(type) {
+
+        $(".other-skills ul").empty();
+        $(".section").empty();
+        $("#projects .card-columns").empty();
+
+        setTimeout(function () {
+
+            let skillsByTechType = []
+            skills.forEach(element => {
+
+                if (type == null || (element.type == type || element.type == "Full Stack")) {
+
+                    var imageUrl = `resources/img/skills/${element.name.replace("/", "-").toLowerCase()}.png`;
+                    var image = new Image();
+                    image.src = imageUrl;
+                    image.onload = function () {
+                        $(".other-skills ul").append(`
+                        <li data-name="${element.name}">
+                            <a href="#${element.name}">
+                                <img src="${imageUrl}"> 
+                                <span class="title">${element.name}</span>
+                            </a>
+                        </li>
+                    `);
+                    }
+                    image.onerror = function () {
+                        imageUrl = `resources/img/favicon.png`;
+                        $(".other-skills ul").append(`
+                        <li class="no-image" data-name="${element.name}">
+                            <a href="#${element.name}">
+                                <img src="${imageUrl}"> 
+                                <span class="title">${element.name}</span>
+                            </a>
+                        </li>
+                    `);
+                    }
+
+                    let skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
+                    if (skill == null) {
+                        skill = { "name": element.technologyType, "elements": [] };
+                        skillsByTechType.push(skill);
+                    }
+                    skill.elements.push(element);
+                }
+
+            });
+
+            skillsByTechType.forEach(element => {
+                var section = $(`
+                        <div class="section">
+                            <h5>${element.name}</h5>
+                            <ul>
+                            </ul>
+                        </div>
+                    `)
+                section.appendTo("#skills .sections");
+
+                element.elements.forEach(skill => {
+
+                    if (type == null || (skill.type == type || skill.type == "Full Stack")) {
+
+                        section.find("ul").append(`
+                            <li data-name="${skill.name}">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: ${skill.knowledgePercentage}%" aria-valuenow="${skill.knowledgePercentage}" aria-valuemin="0" aria-valuemax="100">
+                                        ${skill.name}
+                                    </div>
+                                </div>
+                            </li>
+                        `);
+
+                    }
+
+                });
+
+            });
+            
+            projects.forEach(element => {
+                
+                if (type == null || (element.type == type || element.type == "Full Stack")) {
+
+                    var imageUrl = `${element.logo}`;
+                    var image = new Image();
+                    image.src = imageUrl;
+
+                    image.onload = function () {
+                        $("#projects .card-columns").append(`
+                            <div class="card${element.status == "Em desenvolvimento" ? ' development' : ''}">
+                                <img class="card-img-top" src="${element.logo}" alt="${element.name}">
+                                ${element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">'+element.status+'</span>' : ''}
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
+                                    <p class="card-text">
+                                        ${element.description}
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">${element.technologies}</small>
+                                    </p>
+                                </div>
+                            </div>
+                        `)
+                    }
+                    image.onerror = function () {
+                        $("#projects .card-columns").append(`
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
+                                    <p class="card-text">
+                                        ${element.description}
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">${element.technologies}</small>
+                                    </p>
+                                </div>
+                            </div>
+                        `)
+                    }
+                    
+                }
+
+            });
+
+            $(".dev-type-modal").modal('hide')
+
+        }, 2000);
+
+
+    }
+
 }
 
 var $header = $('#header'),
@@ -373,23 +523,25 @@ $(window).scroll(function () {
     Components.checkHeader();
 });
 
+
 $(document).ready(function () {
 
-    // Title effect
-    let title = "LUCAS RIBEIRO";
-    let timer = title.length * 100;
-    Components.typeWriter($("#full-banner .title"), title, 0);
+    var imageUrl = `resources/img/photo.jpg`;
+    var image = new Image();
+    image.src = imageUrl;
+    image.onload = function () {
 
-    // Show Photo
-    setTimeout(function () {
-        $("#full-banner .title img").addClass("show");
-    }, timer);
+        // Title effect
+        let title = "LUCAS RIBEIRO";
+        let timer = title.length * 100;
+        Components.typeWriter($("#full-banner .title"), title, 0);
 
-    // Bootstrap scrollspy
-    $('body').scrollspy({ target: '#navbar-section' })
+        // Show Photo
+        setTimeout(function () {
+            $("#full-banner .title img").addClass("show");
+        }, timer);
 
-    // Call components
-    Components.smoothScrolling();
+    }
 
     // Check header position
     Components.checkHeader();
@@ -410,125 +562,46 @@ $(document).ready(function () {
         `)
     });
 
-
-    let skillsByTechType = []
-    skills.forEach(element => {
-
-        var imageUrl = `resources/img/skills/${element.name.replace("/", "-").toLowerCase()}.png`;
-        var image = new Image();
-        image.src = imageUrl;
-        image.onload = function () {
-            $(".other-skills ul").append(`
-                <li data-name="${element.name}">
-                    <a href="#${element.name}">
-                        <img src="${imageUrl}"> 
-                        <span class="title">${element.name}</span>
-                    </a>
-                </li>
-            `);
-        }
-        image.onerror = function () {
-            imageUrl = `resources/img/favicon.png`;
-            $(".other-skills ul").append(`
-                <li class="no-image" data-name="${element.name}">
-                    <a href="#${element.name}">
-                        <img src="${imageUrl}"> 
-                        <span class="title">${element.name}</span>
-                    </a>
-                </li>
-            `);
-        }
-
-        let skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
-        if (skill == null) {
-            skill = { "name": element.technologyType, "elements": [] };
-            skillsByTechType.push(skill);
-        }
-        skill.elements.push(element);
-
-    });
-
-    skillsByTechType.forEach(element => {
-
-        var section = $(`
-            <div class="section">
-                <h5>${element.name}</h5>
-                <ul>
-                </ul>
-            </div>
-        `)
-        section.appendTo("#skills .sections");
-
-        element.elements.forEach(skill => {
-
-            section.find("ul").append(`
-                <li data-name="${skill.name}">
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: ${skill.knowledgePercentage}%" aria-valuenow="${skill.knowledgePercentage}" aria-valuemin="0" aria-valuemax="100">
-                            ${skill.name}
-                        </div>
-                    </div>
-                </li>
-            `);
-        });
-
-    });
-
-    projects.forEach(element => {
-
-        var imageUrl = `resources/img/skills/${element.name.replace("/", "-").toLowerCase()}.png`;
-        var image = new Image();
-        image.src = imageUrl;
-        
-        image.onload = function () {
-            $("#projects .card-columns").append(`
-                <div class="card">
-                    <img class="card-img-top" src="imageUrl" alt="${element.name}">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
-                        <p class="card-text">
-                            ${element.description}
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">${element.technologies}</small>
-                        </p>
-                    </div>
-                </div>
-            `)
-        }
-        image.onerror = function () {
-            $("#projects .card-columns").append(`
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
-                        <p class="card-text">
-                            ${element.description}
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">${element.technologies}</small>
-                        </p>
-                    </div>
-                </div>
-            `)
-        }
-
-
-    });
+    Components.changeDevtype(null);
 
     jobs.forEach(element => {
-        $("#jobs .card-columns").append(`
-            <div class="card ${element.end == '' ? 'bg-success' : ''}">
-                <div class="card-body">
-                    <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
-                    <p class="card-text">
-                        ${element.description}
-                    </p>
-                    <p class="card-text">
-                        <small class="text-muted">${element.start}</small>
-                    </p>
+
+        var imageUrl = `${element.logo}`;
+        var image = new Image();
+        image.src = imageUrl;
+
+        image.onload = function () {
+            $("#jobs .card-columns").append(`
+                <div class="card ${element.end == '' ? 'border-success' : ''}">
+                    <img class="card-img-top" src="${element.logo}" alt="${element.name}">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
+                        <p class="card-text">
+                            ${element.description}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">${element.start} ${element.end != '' ? '- ' + element.end : ''}</small>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        `)
+            `)
+        }
+        image.onerror = function () {
+            $("#jobs .card-columns").append(`
+                <div class="card ${element.end == '' ? 'border-success' : ''}">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
+                        <p class="card-text">
+                            ${element.description}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">${element.start} ${element.end != '' ? '- ' + element.end : ''}</small>
+                        </p>
+                    </div>
+                </div>
+            `)
+        }
+
     });
 
     academic.forEach(element => {
@@ -536,18 +609,64 @@ $(document).ready(function () {
             <div class="card ${element.end == '' ? 'bg-secondary' : ''}">
                 <div class="card-body">
                     <h5 class="card-title"><a href="${element.link}">${element.school}</a></h5>
-                    <span class="course">${element.course}</span>
-                    <span class="type">${element.type}</span>
-                    <span class="workload">${element.workload}</span>
+                    <span class="d-block course">${element.course}</span>
+                    <span class="type badge badge-dark">${element.type}</span>
                     <p class="card-text">
                         ${element.description}
                     </p>
                     <p class="card-text">
-                        <small class="text-muted">${element.start}</small>
+                        <small class="text-muted">${element.start} ${element.end != '' ? '- ' + element.end : ''}</small>
                     </p>
                 </div>
             </div>
         `)
     });
+
+    languages.forEach(element => {
+        $("#languages .card-columns").append(`
+            <div class="card ${element.end == '' ? 'bg-secondary' : ''}">
+                <div class="card-body">
+                    <h5 class="card-title">${element.name}</h5>
+                    <p class="card-text">
+                        ${element.level}
+                    </p>
+                </div>
+            </div>
+        `)
+    });
+
+    // Bootstrap scrollspy
+    $('body').scrollspy({ target: '#navbar-section' })
+
+    // Mobile Menu
+    if ($(window).width() <= 767) {
+        $(".category-menu").insertAfter("#header");
+        $(".category-menu").removeClass("my-auto col-sm-6");
+    }
+
+    $(document).on("click", ".btn-toggle-menu, #navbar-section .nav-link", function () {
+        $(".category-menu").toggleClass("active")
+    })
+
+    $(document).on("click", ".dev-type a", function (event) {
+        event.preventDefault();
+        let element = event.currentTarget;
+        if ($(element).parent().hasClass("active")) {
+            $(".dev-type").removeClass("active")
+            Components.changeDevtype(null);
+        } else {
+            $(".dev-type").removeClass("active")
+            $(element).parent().addClass("active")
+            $(".dev-type-modal").modal('show')
+            Components.changeDevtype($(element).attr("href"));
+            $('html, body').animate({
+                scrollTop: $("#skills").offset().top
+            }, 2000);
+        }
+    })
+
+
+    // Call components
+    Components.smoothScrolling();
 
 })

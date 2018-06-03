@@ -5,6 +5,15 @@
     <!-- META -->
     <meta name="theme-color" content="#333333">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lucas Ribeiro Developer Portfolio" />
+    <meta name="keywords" content="developer, programmer, java, javascript, lucasnck, portfolio, design, github, backend, frontend"
+    />
+    <meta name="author" content="lucasnck@hotmail.com" />
+    <meta property="og:url" content="https://lucasnck.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lucasnck - Portfolio" />
+    <meta property="og:description" content="Lucas Ribeiro Developer Portfolio" />
+    <meta property="og:image" content="https://lucasnck.github.io/resources/img/photo.png" />
 
     <!-- BOOTSTRAP 4 -->
     <link rel="stylesheet" href="resources/bootstrap-4.1.1/css/bootstrap.css">
@@ -16,6 +25,7 @@
     <link rel="stylesheet" href="resources/slick/css/slick.css">
 
     <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="resources/css/animate.css">
     <link rel="stylesheet" href="resources/css/default.css">
 
     <!-- FONTS -->
@@ -29,23 +39,48 @@
 
 <body>
 
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <header id="header">
 
         <div class="container">
             <div class="row">
 
-                <div class="col-logo my-auto col-sm-1">
+                <div class="col-menu-toggler d-block d-sm-none my-auto col-2">
+                    <button class="btn btn-toggle-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+
+                <div class="col-logo my-auto col-5 col-sm-1">
                     <a href="/" class="logo">
                         <img src="resources/img/favicon.png" />
                     </a>
                 </div>
 
-                <div id="navbar-section" class="col-menu my-auto col-sm-6">
+                <div id="navbar-section" class="col-menu category-menu my-auto col-sm-6">
+                    <div class="category-header d-sm-none">
+                        <h5>Portfólio</h5>
+                        <button class="btn btn-toggle-menu">
+                            <span class="close-menu">x</span>
+                        </button>
+                    </div>
                     <ul>
                     </ul>
                 </div>
 
-                <div class="col-social-links my-auto col-sm-5">
+                <div class="col-social-links my-auto col-5 col-sm-5">
                     <ul>
                     </ul>
                 </div>
@@ -60,6 +95,11 @@
         <div id="particles-js"></div>
         <h1 class="title">
             <img class="fade" src="resources/img/photo.jpg">
+            <div class="facebook-like">
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Flucasnck.github.io%2F&width=200&layout=button_count&action=like&show_faces=true&share=false&height=65&appId"
+                    width="150" height="20" style="border:none;overflow:hidden; z-index: 1000;" scrolling="no" frameborder="0"
+                    allowTransparency="true"></iframe>
+            </div>
         </h1>
     </div>
 
@@ -77,27 +117,27 @@
 
                 <div class="row mb-5">
 
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <div class="dev-type">
-                            <a href="/backend.html">
+                            <a href="Back-end">
                                 <div class="title">
                                     <h5>Desenvolvedor Back-end
                                         <span class="badge badge-success">Ferreiro</span>
                                     </h5>
-                                    <p>Desenvolvo lógica de aplicações e sistemas, faço as coisas acontecerem!</p>
+                                    <p>Selecione para ver meu perfil como <b>Desenvoledor de Lógica de Aplicações</b></p>
                                 </div>
                             </a>
                             <img src="resources/img/backend2.gif">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <div class="dev-type">
-                            <a href="/frontend.html">
+                            <a href="Front-end">
                                 <div class="title">
                                     <h5>Desenvolvedor Front-end
                                         <span class="badge badge-danger">Mago</span>
                                     </h5>
-                                    <p>Desenvolvo aparência de aplicações e sistemas, faço as coisas aparecerem!</p>
+                                    <p>Selecione para ver meu perfil como <b>Desenvoledor de Aparência de Aplicações</b></p>
                                 </div>
                             </a>
                             <img src="resources/img/frontend2.gif">
@@ -146,15 +186,15 @@
             </div>
         </div>
 
-        
+
         <div id="jobs" class="text-center">
-                <div class="container">
-                    <h1 class="custom-title mb-5">Carreira</h1>
-                    <div class="card-columns">
-                    </div>
+            <div class="container">
+                <h1 class="custom-title mb-5">Carreira</h1>
+                <div class="card-columns">
                 </div>
+            </div>
         </div>
-        
+
         <div id="academic" class="text-center">
             <div class="container">
                 <h1 class="custom-title mb-5">Formação Acadêmica</h1>
@@ -163,33 +203,76 @@
             </div>
         </div>
 
+        <div id="languages" class="text-center">
+            <div class="container">
+                <h1 class="custom-title mb-5">Idiomas</h1>
+                <div class="card-columns">
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <footer id="footer">
 
-        <div class="row">
+        <div class="container">
 
-            <div class="col-sm-3">
-            
+            <div class="footer-item">
+
+                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="20"></div>
+
             </div>
 
-            <div class="col-sm-3">
-        
+            <div class="footer-item">
+                <address id="contact" class="text-left">
+                    <strong>
+                        <span class="fa fa-user"></span> Contato
+                    </strong>
+                    <br>
+                    <span class="fa fa-map-marker"></span> Marília
+                    <br>
+                    <i class="fas fa-phone"></i> (14) 99630-9404
+                </address>
             </div>
-                    
+
         </div>
 
     </footer>
+
+    <div class="copyright">
+        <div class="container">
+            <p>© Lucas Ribeiro. Todos os direitos reservados. Não é proibida a reprodução parcial ou total desse portfólio e
+                você ainda pode cloná-lo
+                <a href="https://github.com/lucasnck/lucasnck.github.io" target="_blank">
+                    <span class="badge badge-dark">nesse repositôrio</span>.</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="modal dev-type-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-spinner fa-spin"></i> Preparando conteúdo</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Aguarde enquanto preparo o conteúdo para você</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- DEFAULT JS -->
     <script src="resources/js/jquery-3.3.1.min.js"></script>
     <script src="resources/bootstrap-4.1.1/js/bootstrap.js"></script>
     <script src="resources/slick/js/slick.js"></script>
+    <!-- <script src="resources/js/pace.js"></script> -->
     <script src="resources/particles/particles.js"></script>
     <script src="resources/particles/particle-app.js"></script>
 
     <!-- CUSTOM JS -->
     <script src="resources/js/default.js"></script>
+    <!-- <script src="resources/js/jquery-viewportchecker.js"></script> -->
 
 </body>
 
