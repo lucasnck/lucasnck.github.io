@@ -462,7 +462,7 @@ var projects = [
         "technologies": "Java, JSF, Hibernate, CriteriaAPI, JPA, Bootstrap4, SASS, XHMTL",
         "description": "Sistema para auxiliar no desenvolvimento de projetos",
         "category": "autônomo",
-        "link": "http://teste.com",
+        "link": "",
         "status": "Em desenvolvimento"
     },
     {
@@ -472,7 +472,7 @@ var projects = [
         "technologies": "JavaScript, Typescript, React, JSON, HTML5, SASS",
         "description": "The new way to make requests in API",
         "category": "autônomo",
-        "link": "http://teste.com",
+        "link": "",
         "status": "Em desenvolvimento"
     },
     {
