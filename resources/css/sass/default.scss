@@ -91,7 +91,7 @@ a, a:hover {
     }
 
     @include sm-down {
-        .col-logo {
+        .col-logo { 
             text-align: center;
         }
     }
