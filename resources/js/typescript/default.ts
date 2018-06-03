@@ -247,7 +247,7 @@ var skills = [
 
         "name": "Bootstrap",
         "type": "Front-end",
-        "technologyType": "Javascript Library",
+        "technologyType": "HTML Library",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
