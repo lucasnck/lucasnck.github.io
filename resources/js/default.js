@@ -35,12 +35,12 @@ var menu = [
 var social = [
     {
         "title": "Facebook",
-        "link": "facebook.com/luscanck",
+        "link": "https://www.instagram.com/luscanck/",
         "icon": "fab fa-facebook-f"
     },
     {
         "title": "Instagram",
-        "link": "instagram.com/luscanck",
+        "link": "https://www.instagram.com/luscanck/",
         "icon": "fab fa-instagram"
     },
     {
