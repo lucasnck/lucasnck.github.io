@@ -216,7 +216,7 @@ a, a:hover {
 }
 
     #section-container {
-        > div {
+        > div { 
             @include sm-up {
                 margin-bottom: 150px;
             }
