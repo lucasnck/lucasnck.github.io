@@ -120,7 +120,7 @@ var skills = [
         "experience": ""
     },
     {
-        "name": "Node.js",
+        "name": "Node",
         "type": "Back-end",
         "technologyType": "Javascript Framework",
         "knowledgePercentage": 40,
@@ -147,6 +147,62 @@ var skills = [
         "name": "jQuery",
         "type": "Front-end",
         "technologyType": "Javascript Library",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Slick",
+        "type": "Front-end",
+        "technologyType": "Javascript Library",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "FontAwesome",
+        "type": "Front-end",
+        "technologyType": "Html Library",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "NetBeans",
+        "type": "Back-end",
+        "technologyType": "IDE",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Eclipse",
+        "type": "Back-end",
+        "technologyType": "IDE",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Visual Studio Code",
+        "type": "Back-end",
+        "technologyType": "IDE",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "ATOM",
+        "type": "Back-end",
+        "technologyType": "IDE",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "PrettyFaces",
+        "type": "Back-end",
+        "technologyType": "JSF Library",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -410,7 +466,7 @@ var projects = [
         "status": "Em desenvolvimento"
     },
     {
-        "name": "Cordeiro Atopeças",
+        "name": "Cordeiro Autopeças",
         "type": "Front-end",
         "logo": "https://cordeiro.idealeware.com.br/static/store/Logo top-ec660ecb-c517-4158-b7d9-0993364476ee.png",
         "technologies": "Angular, Bootstrap4, JavaScript, SASS",
@@ -485,7 +541,7 @@ var jobs = [
         "name": "Admake",
         "logo": "resources/img/jobs/admake.svg",
         "post": "Desenvolvedor front-end",
-        "description": "",
+        "description": "Desenvolvedor Front-end atuando com JavaScript, Typescript, jQuery, Bootstrap, AJAX, JSON, HTML5. CSS3, SASS, PHP, TWIG, etc.",
         "category": "CLT",
         "link": "http://admake.com.br",
         "start": "21/08/2017",
@@ -493,19 +549,39 @@ var jobs = [
     },
     {
         "name": "Secretaria da Educação do Estado de São Paulo",
-        "logo": "resources/img/jobs/seesp.svg",
+        "logo": "resources/img/jobs/seesp.png",
         "post": "Servidor Público",
-        "description": "",
+        "description": "Servidor público efetivo, atuando com rotinas administrativas, atendimento ao público, elaboração do documentos e planilhas com excel, word, pwp, etc.",
         "category": "Efetivo",
         "link": "",
         "start": "01/03/2013",
         "end": "20/08/2017"
     },
     {
+        "name": "Monitor de Estrutura de Dados",
+        "logo": "http://www.fateclins.edu.br/v4.0/img/logo-fatec10anos-main.png",
+        "post": "Estágio monitor de estrutura de dados",
+        "description": "Estágio de Ensino Superior atuando como monitor de Estrutura de Dados para a Linguagem C/C++",
+        "category": "Estágiário",
+        "link": "",
+        "start": "01/08/2016",
+        "end": "01/10/2016"
+    },
+    {
         "name": "TNT Technology",
-        "logo": "resources/img/jobs/tnt.svg",
+        "logo": "resources/img/jobs/tnt.png",
         "post": "Estágio como desenvolvedor front-end",
-        "description": "",
+        "description": "Estágio de Ensino Superior atuando com JavaScript, Applets, Bootstrap, etc.",
+        "category": "Estágiário",
+        "link": "",
+        "start": "01/08/2016",
+        "end": "01/10/2016"
+    },
+    {
+        "name": "Fundap - Secretaria de Educação do Estado de São Paulo",
+        "logo": "",
+        "post": "Estágio como monitor de laboratório de informática",
+        "description": "Estágio de Ensino Médio atuando com manutenção em laboratório de informática de escola pública",
         "category": "Estágiário",
         "link": "",
         "start": "01/08/2016",
@@ -516,7 +592,7 @@ var academic = [
     {
         "school": "Faculdade de Tecnologia de Lins - Prof. Antônio Seabra",
         "course": "Análise e Desenvolvimento de Sistemas",
-        "description": "",
+        "description": "O Tecnólogo em Análise e Desenvolvimento de Sistemas analisa, projeta, documenta, especifica, testa, implanta e mantém sistemas computacionais de informação. Esse profissional trabalha, também, com ferramentas computacionais, equipamentos de informática e metodologia de projetos na produção de sistemas. Raciocínio lógico, emprego de linguagens de programação e de metodologias de construção de projetos, preocupação com a qualidade, usabilidade, robustez, integridade e segurança de programas computacionais são fundamentais à atuação desse profissional.",
         "type": "Ensino Superior",
         "start": "02/2013",
         "end": "06/2016"
@@ -526,12 +602,36 @@ var academic = [
         "course": "Ensino Médio",
         "description": "",
         "type": "Ensino Médio",
-        "start": "",
+        "start": "2008",
         "end": "12/2010"
     },
     {
+        "school": "CETEC - Caxias do Sul/RS",
+        "course": "Ensino Médio Técnico",
+        "description": "Técnico em Informática",
+        "type": "Ensino Médio",
+        "start": "",
+        "end": "12/2009"
+    },
+    {
         "school": "Udemy",
-        "course": "Front-end",
+        "course": "Web Moderno com JavaScript! COMPLETO 2018 + Projetos",
+        "description": "13 cursos - Javascript React VueJS Node HTML CSS Gulp Webpack jQuery Bootstrap e muito mais",
+        "type": "Curso",
+        "start": "2018",
+        "end": ""
+    },
+    {
+        "school": "Udemy",
+        "course": "Java Web Developer's masterclass : Java + JSP + JSF",
+        "description": "This Course is consist of couple of sub course. This course is designed for a user, who is planning to become a Java web developer. This course is filled with all the required topics which usually a Java Web Developer requires during the application development process.",
+        "type": "Curso",
+        "start": "2018",
+        "end": ""
+    },
+    {
+        "school": "Udemy",
+        "course": "Complete Java Masterclass",
         "description": "",
         "type": "Curso",
         "start": "2018",
@@ -729,10 +829,10 @@ $(document).ready(function () {
         var image = new Image();
         image.src = imageUrl;
         image.onload = function () {
-            $("#jobs .card-columns").append("\n                <div class=\"card " + (element.end == '' ? 'border-success' : '') + "\">\n                    <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                    <div class=\"card-body\">\n                        <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                        <p class=\"card-text\">\n                            " + element.description + "\n                        </p>\n                        <p class=\"card-text\">\n                            <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                        </p>\n                    </div>\n                </div>\n            ");
+            $("#jobs .card-columns").append("\n                <div class=\"card " + (element.end == '' ? 'border-success' : '') + "\">\n                    <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                    " + (element.end == '' ? '<span class="badge badge-success">Atualmente</span>' : '') + "\n                    <div class=\"card-body\">\n                        <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                        <p class=\"card-text\">\n                            " + element.description + "\n                        </p>\n                        <p class=\"card-text\">\n                            <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                        </p>\n                    </div>\n                </div>\n            ");
         };
         image.onerror = function () {
-            $("#jobs .card-columns").append("\n                <div class=\"card " + (element.end == '' ? 'border-success' : '') + "\">\n                    <div class=\"card-body\">\n                        <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                        <p class=\"card-text\">\n                            " + element.description + "\n                        </p>\n                        <p class=\"card-text\">\n                            <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                        </p>\n                    </div>\n                </div>\n            ");
+            $("#jobs .card-columns").append("\n                <div class=\"card " + (element.end == '' ? 'border-success' : '') + "\">\n                    " + (element.end == '' ? '<span class="badge badge-success">Atualmente</span>' : '') + "\n                    <div class=\"card-body\">\n                        <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                        <p class=\"card-text\">\n                            " + element.description + "\n                        </p>\n                        <p class=\"card-text\">\n                            <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                        </p>\n                    </div>\n                </div>\n            ");
         };
     });
     academic.forEach(function (element) {

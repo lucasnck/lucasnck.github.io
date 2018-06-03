@@ -533,13 +533,15 @@ a, a:hover {
 .card.development:hover {
   filter: blur(0px);
 }
-/* line 424, sass/default.scss */
-.card.development .badge {
+
+/* line 426, sass/default.scss */
+.card > .badge {
   position: absolute;
   top: 10px;
+  right: 10px;
 }
 
-/* line 430, sass/default.scss */
+/* line 432, sass/default.scss */
 .footer-item {
   text-align: center;
   display: inline-block;
@@ -547,7 +549,7 @@ a, a:hover {
 }
 
 /* COPYRIGHT */
-/* line 437, sass/default.scss */
+/* line 439, sass/default.scss */
 .copyright {
   margin-bottom: 0;
   bottom: 0;
@@ -555,18 +557,18 @@ a, a:hover {
   text-align: center;
   padding: 20px;
 }
-/* line 443, sass/default.scss */
+/* line 445, sass/default.scss */
 .copyright p {
   color: #a0a0a0;
   font-size: 12px;
   margin-bottom: 0;
 }
 
-/* line 451, sass/default.scss */
+/* line 453, sass/default.scss */
 .dev-type-modal .modal-header {
   border-bottom-color: transparent;
 }
-/* line 455, sass/default.scss */
+/* line 457, sass/default.scss */
 .dev-type-modal .modal-content {
   background-image: url("../../resources/img/octopus.gif");
   background-position: center bottom;
