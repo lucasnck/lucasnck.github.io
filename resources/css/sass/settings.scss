@@ -1,0 +1,90 @@
+// colors
+$primaryColor: #333333;
+$secondaryColor: #c0c0c0;
+$tertiaryColor: #000000;
+
+// fonts
+$fontFamily: 'Ubuntu', sans-serif;
+$secondaryFontFamily: 'Dosis', sans-serif;
+
+
+// MIXINS
+@mixin placeholder() {
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        @content;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        @content;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        @content;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+    &:placeholder {
+        @content;
+    }
+}
+
+@mixin keyframes($name) {
+
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} { 
+        @content;
+    }
+
+}
+
+
+// BROWSER COMPATIBILITY
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transform($content) {
+    -webkit-transform: $content;
+    -moz-transform: $content;
+    -o-transform: $content;
+    transform: $content;
+}
+@mixin filter($content) {
+    -webkit-filter: $content;
+    -moz-filter: $content;
+    -o-filter: $content;
+    -ms-filter: $content;
+    filter: $content;
+}
+
+@mixin lg-down() {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin md-up() {
+    @media (min-width: 992px) {
+        @content;	
+    }
+}
+@mixin md-down() {
+    @media (max-width: 991px) {
+        @content;	
+    }
+}
+@mixin sm-down() {
+    @media (max-width: 767px) {
+        @content;	
+    }
+}
+@mixin xs-up() {
+    @media (min-width: 768px) {
+        @content;	
+    }
+}
