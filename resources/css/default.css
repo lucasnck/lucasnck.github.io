@@ -415,12 +415,13 @@ a, a:hover {
 /* line 354, sass/default.scss */
 #skills .other-skills ul li img {
   max-height: 100px;
+  max-width: 100%;
 }
-/* line 357, sass/default.scss */
+/* line 358, sass/default.scss */
 #skills .other-skills ul li a {
   display: block;
 }
-/* line 359, sass/default.scss */
+/* line 360, sass/default.scss */
 #skills .other-skills ul li a span {
   position: absolute;
   top: 50%;
@@ -434,84 +435,84 @@ a, a:hover {
   opacity: 0;
   font-weight: 600;
 }
-/* line 374, sass/default.scss */
+/* line 375, sass/default.scss */
 #skills .other-skills ul li:hover, #skills .other-skills ul li.no-image {
   background-color: #000000;
 }
-/* line 376, sass/default.scss */
+/* line 377, sass/default.scss */
 #skills .other-skills ul li:hover img, #skills .other-skills ul li.no-image img {
   opacity: 0.5;
 }
-/* line 380, sass/default.scss */
+/* line 381, sass/default.scss */
 #skills .other-skills ul li:hover a span, #skills .other-skills ul li.no-image a span {
   opacity: 1;
 }
 
 @-webkit-keyframes background-gradient {
-  /* line 395, sass/default.scss */
+  /* line 396, sass/default.scss */
   0% {
     background-position: 0% 50%;
   }
 
-  /* line 396, sass/default.scss */
+  /* line 397, sass/default.scss */
   50% {
     background-position: 100% 50%;
   }
 
-  /* line 397, sass/default.scss */
+  /* line 398, sass/default.scss */
   100% {
     background-position: 0% 50%;
   }
 }
 
 @-moz-keyframes background-gradient {
-  /* line 395, sass/default.scss */
+  /* line 396, sass/default.scss */
   0% {
     background-position: 0% 50%;
   }
 
-  /* line 396, sass/default.scss */
+  /* line 397, sass/default.scss */
   50% {
     background-position: 100% 50%;
   }
 
-  /* line 397, sass/default.scss */
+  /* line 398, sass/default.scss */
   100% {
     background-position: 0% 50%;
   }
 }
 
 @keyframes background-gradient {
-  /* line 395, sass/default.scss */
+  /* line 396, sass/default.scss */
   0% {
     background-position: 0% 50%;
   }
 
-  /* line 396, sass/default.scss */
+  /* line 397, sass/default.scss */
   50% {
     background-position: 100% 50%;
   }
 
-  /* line 397, sass/default.scss */
+  /* line 398, sass/default.scss */
   100% {
     background-position: 0% 50%;
   }
 }
 
 /* CARDS */
-/* line 404, sass/default.scss */
+/* line 405, sass/default.scss */
 .card-columns .card img {
   max-width: 80px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 411, sass/default.scss */
+/* line 412, sass/default.scss */
 .card-columns .card .card-title a {
   color: #333333;
 }
 
-/* line 417, sass/default.scss */
+/* line 418, sass/default.scss */
 .card.development {
   filter: blur(2px);
   -moz-transition: all 0.3s linear;
@@ -519,17 +520,17 @@ a, a:hover {
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-/* line 420, sass/default.scss */
+/* line 421, sass/default.scss */
 .card.development:hover {
   filter: blur(0px);
 }
-/* line 423, sass/default.scss */
+/* line 424, sass/default.scss */
 .card.development .badge {
   position: absolute;
   top: 10px;
 }
 
-/* line 429, sass/default.scss */
+/* line 430, sass/default.scss */
 .footer-item {
   text-align: center;
   display: inline-block;
@@ -537,7 +538,7 @@ a, a:hover {
 }
 
 /* COPYRIGHT */
-/* line 436, sass/default.scss */
+/* line 437, sass/default.scss */
 .copyright {
   margin-bottom: 0;
   bottom: 0;
@@ -545,18 +546,18 @@ a, a:hover {
   text-align: center;
   padding: 20px;
 }
-/* line 442, sass/default.scss */
+/* line 443, sass/default.scss */
 .copyright p {
   color: #a0a0a0;
   font-size: 12px;
   margin-bottom: 0;
 }
 
-/* line 450, sass/default.scss */
+/* line 451, sass/default.scss */
 .dev-type-modal .modal-header {
   border-bottom-color: transparent;
 }
-/* line 454, sass/default.scss */
+/* line 455, sass/default.scss */
 .dev-type-modal .modal-content {
   background-image: url("../../resources/img/octopus.gif");
   background-position: center bottom;

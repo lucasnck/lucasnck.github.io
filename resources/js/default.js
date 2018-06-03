@@ -61,23 +61,31 @@ var skills = [
         "technologyType": "Linguagem de programação",
         "knowledgePercentage": 90,
         "description": "Desenvolvimento com JSF",
-        "experience": "3 anos"
+        "experience": ""
     },
     {
         "name": "JavaScript",
         "type": "Front-end",
         "technologyType": "Linguagem de programação",
-        "knowledgePercentage": 50,
+        "knowledgePercentage": 70,
         "description": "",
-        "experience": "1 ano"
+        "experience": ""
     },
     {
-        "name": "TypescriptScript",
+        "name": "TypeScript",
         "type": "Full Stack",
         "technologyType": "Linguagem de programação",
         "knowledgePercentage": 50,
         "description": "",
-        "experience": "1 ano"
+        "experience": ""
+    },
+    {
+        "name": "Java Android",
+        "type": "Back-end",
+        "technologyType": "Linguagem de programação",
+        "knowledgePercentage": 50,
+        "description": "",
+        "experience": ""
     },
     {
         "name": "C/C++",
@@ -91,7 +99,7 @@ var skills = [
         "name": "PHP",
         "type": "Back-end",
         "technologyType": "Linguagem de programação",
-        "knowledgePercentage": 30,
+        "knowledgePercentage": 20,
         "description": "",
         "experience": ""
     },
@@ -99,25 +107,25 @@ var skills = [
         "name": "JSF",
         "type": "Back-end",
         "technologyType": "Java Framework",
-        "knowledgePercentage": 80,
+        "knowledgePercentage": 90,
         "description": "",
-        "experience": "2"
+        "experience": ""
     },
     {
         "name": "JSP",
         "type": "Back-end",
         "technologyType": "Java Framework",
-        "knowledgePercentage": 50,
+        "knowledgePercentage": 60,
         "description": "",
-        "experience": "0"
+        "experience": ""
     },
     {
         "name": "Node.js",
         "type": "Back-end",
         "technologyType": "Javascript Framework",
-        "knowledgePercentage": 50,
+        "knowledgePercentage": 40,
         "description": "",
-        "experience": "0"
+        "experience": ""
     },
     {
         "name": "Angular",
@@ -125,7 +133,7 @@ var skills = [
         "technologyType": "Javascript Framework",
         "knowledgePercentage": 20,
         "description": "",
-        "experience": "1"
+        "experience": ""
     },
     {
         "name": "React",
@@ -133,7 +141,7 @@ var skills = [
         "technologyType": "Javascript Framework",
         "knowledgePercentage": 10,
         "description": "",
-        "experience": "2 meses"
+        "experience": ""
     },
     {
         "name": "jQuery",
@@ -141,7 +149,7 @@ var skills = [
         "technologyType": "Javascript Library",
         "knowledgePercentage": 100,
         "description": "",
-        "experience": "3"
+        "experience": ""
     },
     {
         "name": "Bootstrap",
@@ -149,7 +157,175 @@ var skills = [
         "technologyType": "Javascript Library",
         "knowledgePercentage": 100,
         "description": "",
-        "experience": "3"
+        "experience": ""
+    },
+    {
+        "name": "SASS",
+        "type": "Front-end",
+        "technologyType": "Linguagem de Marcação",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "CSS3",
+        "type": "Front-end",
+        "technologyType": "Linguagem de Marcação",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "HTML5",
+        "type": "Front-end",
+        "technologyType": "Linguagem de Marcação",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Primefaces",
+        "type": "Front-end",
+        "technologyType": "JSF Library",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "JPA",
+        "type": "Back-end",
+        "technologyType": "Java Framework",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Criteria API",
+        "type": "Back-end",
+        "technologyType": "Java Framework",
+        "knowledgePercentage": 80,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Hibernate",
+        "type": "Back-end",
+        "technologyType": "Java Framework",
+        "knowledgePercentage": 80,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "PostgreSQL",
+        "type": "Back-end",
+        "technologyType": "Database",
+        "knowledgePercentage": 50,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "MySQL",
+        "type": "Back-end",
+        "technologyType": "Database",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Jersey",
+        "type": "Back-end",
+        "technologyType": "Java Framework",
+        "knowledgePercentage": 80,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Blender",
+        "type": "Game Development",
+        "technologyType": "Visual software",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "LWJGL",
+        "type": "Game Development",
+        "technologyType": "Java Library",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "OpenGL",
+        "type": "Game Development",
+        "technologyType": "C/C++ Library",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "MVC",
+        "type": "Back-end",
+        "technologyType": "Programming knowledge",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "UML",
+        "type": "Back-end",
+        "technologyType": "Programming knowledge",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "SCRUM",
+        "type": "Back-end",
+        "technologyType": "Programming knowledge",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "JSON",
+        "type": "Front-end",
+        "technologyType": "Programming knowledge",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "JAX-RS",
+        "type": "Back-end",
+        "technologyType": "Programming knowledge",
+        "knowledgePercentage": 0,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Apache TOMCAT",
+        "type": "Back-end",
+        "technologyType": "Server",
+        "knowledgePercentage": 80,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "TOMEE",
+        "type": "Back-end",
+        "technologyType": "Server",
+        "knowledgePercentage": 70,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "GLASSFISH",
+        "type": "Back-end",
+        "technologyType": "Server",
+        "knowledgePercentage": 50,
+        "description": "",
+        "experience": ""
     }
 ];
 var projects = [
@@ -204,13 +380,103 @@ var projects = [
         "status": "concluído"
     },
     {
+        "name": "Ponto das Tintas",
+        "type": "Front-end",
+        "logo": "https://www.pontodastintas.com.br/static/store/Captura de Tela 2017-11-13 às 11-da541d43-9c1a-4045-b5e4-415fb279b8bc.png",
+        "technologies": "Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://www.pontodastintas.com.br/",
+        "status": "concluído"
+    },
+    {
+        "name": "Collisione Boutique",
+        "type": "Front-end",
+        "logo": "",
+        "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "",
+        "status": "Em desenvolvimento"
+    },
+    {
+        "name": "Mayra Sartori",
+        "type": "Front-end",
+        "logo": "",
+        "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "",
+        "status": "Em desenvolvimento"
+    },
+    {
+        "name": "Cordeiro Atopeças",
+        "type": "Front-end",
+        "logo": "https://cordeiro.idealeware.com.br/static/store/Logo top-ec660ecb-c517-4158-b7d9-0993364476ee.png",
+        "technologies": "Angular, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://cordeiro.netlify.com/",
+        "status": "Em desenvolvimento"
+    },
+    {
+        "name": "Flor de Coco",
+        "type": "Front-end",
+        "logo": "https://cdn.awsli.com.br/400x300/500/500121/logo/74282c854e.png",
+        "technologies": "Bootstrap, JavaScript, CSS3",
+        "description": "",
+        "category": "Admake",
+        "link": "http://flordecoco.com.br/",
+        "status": "Concluído"
+    },
+    {
+        "name": "Refrigás",
+        "type": "Front-end",
+        "logo": "",
+        "technologies": "Angular, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://refrigas.com.br/",
+        "status": "Concluído"
+    },
+    {
+        "name": "Walfanger",
+        "type": "Front-end",
+        "logo": "https://www.walfanger.com.br/static/store/walfanger-54afc0c3-724e-4203-bd7f-6d899d6a1ed6.png",
+        "technologies": "Angular, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://walfanger.com.br/",
+        "status": "Concluído"
+    },
+    {
+        "name": "Astuti Casa",
+        "type": "Front-end",
+        "logo": "",
+        "technologies": "Angular, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://astuticasa.com.br/",
+        "status": "Concluído"
+    },
+    {
         "name": "Berve Enxovais",
         "type": "Front-end",
         "logo": "https://images.tcdn.com.br/605938/themes/56/img/logo-berve-horizontal.png",
         "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
-        "description": "teste",
+        "description": "",
         "category": "Admake",
-        "link": "http://teste.com",
+        "link": "http://berve.com.br/",
+        "status": "concluído"
+    },
+    {
+        "name": "Blog Loja Cuba",
+        "type": "Front-end",
+        "logo": "http://blog.lojacuba.com.br/wp-content/themes/lojacubablog/resources/images/logo.png",
+        "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "http://blog.lojacuba.com.br/",
         "status": "concluído"
     },
 ];
@@ -224,6 +490,26 @@ var jobs = [
         "link": "http://admake.com.br",
         "start": "21/08/2017",
         "end": ""
+    },
+    {
+        "name": "Secretaria da Educação do Estado de São Paulo",
+        "logo": "resources/img/jobs/seesp.svg",
+        "post": "Servidor Público",
+        "description": "",
+        "category": "Efetivo",
+        "link": "",
+        "start": "01/03/2013",
+        "end": "20/08/2017"
+    },
+    {
+        "name": "TNT Technology",
+        "logo": "resources/img/jobs/tnt.svg",
+        "post": "Estágio como desenvolvedor front-end",
+        "description": "",
+        "category": "Estágiário",
+        "link": "",
+        "start": "01/08/2016",
+        "end": "01/10/2016"
     }
 ];
 var academic = [
@@ -232,16 +518,22 @@ var academic = [
         "course": "Análise e Desenvolvimento de Sistemas",
         "description": "",
         "type": "Ensino Superior",
-        "workload": 2400,
         "start": "02/2013",
         "end": "06/2016"
+    },
+    {
+        "school": "EE 21 de Abril - Lins/SP",
+        "course": "Ensino Médio",
+        "description": "",
+        "type": "Ensino Médio",
+        "start": "",
+        "end": "12/2010"
     },
     {
         "school": "Udemy",
         "course": "Front-end",
         "description": "",
         "type": "Curso",
-        "workload": 80,
         "start": "2018",
         "end": ""
     }
@@ -358,20 +650,24 @@ var Components = /** @class */ (function () {
                         imageUrl = "resources/img/favicon.png";
                         $(".other-skills ul").append("\n                        <li class=\"no-image\" data-name=\"" + element.name + "\">\n                            <a href=\"#" + element.name + "\">\n                                <img src=\"" + imageUrl + "\"> \n                                <span class=\"title\">" + element.name + "</span>\n                            </a>\n                        </li>\n                    ");
                     };
-                    var skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
-                    if (skill == null) {
-                        skill = { "name": element.technologyType, "elements": [] };
-                        skillsByTechType.push(skill);
+                    if (element.knowledgePercentage > 0) {
+                        var skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
+                        if (skill == null) {
+                            skill = { "name": element.technologyType, "elements": [] };
+                            skillsByTechType.push(skill);
+                        }
+                        skill.elements.push(element);
                     }
-                    skill.elements.push(element);
                 }
             });
             skillsByTechType.forEach(function (element) {
                 var section = $("\n                        <div class=\"section\">\n                            <h5>" + element.name + "</h5>\n                            <ul>\n                            </ul>\n                        </div>\n                    ");
                 section.appendTo("#skills .sections");
                 element.elements.forEach(function (skill) {
-                    if (type == null || (skill.type == type || skill.type == "Full Stack")) {
-                        section.find("ul").append("\n                            <li data-name=\"" + skill.name + "\">\n                                <div class=\"progress\">\n                                    <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                        " + skill.name + "\n                                    </div>\n                                </div>\n                            </li>\n                        ");
+                    if (skill.knowledgePercentage > 0) {
+                        if (type == null || (skill.type == type || skill.type == "Full Stack")) {
+                            section.find("ul").append("\n                                <li data-name=\"" + skill.name + "\">\n                                    <div class=\"progress\">\n                                        <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                            " + skill.name + "\n                                        </div>\n                                    </div>\n                                </li>\n                            ");
+                        }
                     }
                 });
             });
@@ -384,12 +680,19 @@ var Components = /** @class */ (function () {
                         $("#projects .card-columns").append("\n                            <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                                <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                                " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                                <div class=\"card-body\">\n                                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                    <p class=\"card-text\">\n                                        " + element.description + "\n                                    </p>\n                                    <p class=\"card-text\">\n                                        <small class=\"text-muted\">" + element.technologies + "</small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
                     };
                     image.onerror = function () {
-                        $("#projects .card-columns").append("\n                            <div class=\"card\">\n                                <div class=\"card-body\">\n                                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                    <p class=\"card-text\">\n                                        " + element.description + "\n                                    </p>\n                                    <p class=\"card-text\">\n                                        <small class=\"text-muted\">" + element.technologies + "</small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
+                        $("#projects .card-columns").append("\n                            <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                                " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                                <div class=\"card-body\">\n                                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                    <p class=\"card-text\">\n                                        " + element.description + "\n                                    </p>\n                                    <p class=\"card-text\">\n                                        <small class=\"text-muted\">" + element.technologies + "</small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
                     };
                 }
             });
             $(".dev-type-modal").modal('hide');
         }, 2000);
+    };
+    Components.compare = function (a, b) {
+        if (a.knowledgePercentage > b.knowledgePercentage)
+            return -1;
+        if (a.knowledgePercentage < b.knowledgePercentage)
+            return 1;
+        return 0;
     };
     return Components;
 }());
@@ -419,6 +722,7 @@ $(document).ready(function () {
     social.forEach(function (element) {
         $("#header .col-social-links ul").append("\n            <li>\n                <a class=\"nav-link\" href=\"" + element.link + "\" alt=\"" + element.title + "\"><i class=\"" + element.icon + "\"></i></a>\n            </li>\n        ");
     });
+    skills.sort(Components.compare);
     Components.changeDevtype(null);
     jobs.forEach(function (element) {
         var imageUrl = "" + element.logo;
@@ -435,7 +739,7 @@ $(document).ready(function () {
         $("#academic .card-columns").append("\n            <div class=\"card " + (element.end == '' ? 'bg-secondary' : '') + "\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.school + "</a></h5>\n                    <span class=\"d-block course\">" + element.course + "</span>\n                    <span class=\"type badge badge-dark\">" + element.type + "</span>\n                    <p class=\"card-text\">\n                        " + element.description + "\n                    </p>\n                    <p class=\"card-text\">\n                        <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                    </p>\n                </div>\n            </div>\n        ");
     });
     languages.forEach(function (element) {
-        $("#languages .card-columns").append("\n            <div class=\"card " + (element.end == '' ? 'bg-secondary' : '') + "\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">" + element.name + "</h5>\n                    <p class=\"card-text\">\n                        " + element.level + "\n                    </p>\n                </div>\n            </div>\n        ");
+        $("#languages .card-columns").append("\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">" + element.name + "</h5>\n                    <p class=\"card-text\">\n                        " + element.level + "\n                    </p>\n                </div>\n            </div>\n        ");
     });
     // Bootstrap scrollspy
     $('body').scrollspy({ target: '#navbar-section' });
