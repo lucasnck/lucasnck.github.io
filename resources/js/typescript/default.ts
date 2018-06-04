@@ -247,7 +247,7 @@ var skills = [
 
         "name": "SASS",
         "type": "Front-end",
-        "technologyType": "Linguagem de Marcação",
+        "technologyType": "Linguagem de marcação",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -256,7 +256,7 @@ var skills = [
 
         "name": "CSS3",
         "type": "Front-end",
-        "technologyType": "Linguagem de Marcação",
+        "technologyType": "Linguagem de marcação",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -265,7 +265,7 @@ var skills = [
 
         "name": "HTML5",
         "type": "Front-end",
-        "technologyType": "Linguagem de Marcação",
+        "technologyType": "Linguagem de marcação",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -317,10 +317,37 @@ var skills = [
     },
     {
 
+        "name": "MongoDB",
+        "type": "Back-end",
+        "technologyType": "Database",
+        "knowledgePercentage": 20,
+        "description": "",
+        "experience": ""
+    },
+    {
+
+        "name": "Derby",
+        "type": "Back-end",
+        "technologyType": "Database",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+
+        "name": "DB4O",
+        "type": "Back-end",
+        "technologyType": "Database",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+
         "name": "MySQL",
         "type": "Back-end",
         "technologyType": "Database",
-        "knowledgePercentage": 0,
+        "knowledgePercentage": 50,
         "description": "",
         "experience": ""
     },
@@ -563,7 +590,7 @@ var projects = [
         "name": "Collisione Boutique",
         "type": "Front-end",
         "logo": "",
-        "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
+        "technologies": "Typescript, Twig, jQuey, Bootstrap4, JavaScript, SASS",
         "description": "",
         "category": "Admake",
         "link": "",
@@ -573,7 +600,7 @@ var projects = [
         "name": "Mayra Sartori",
         "type": "Front-end",
         "logo": "",
-        "technologies": "PHP, Twig, Bootstrap4, JavaScript, SASS",
+        "technologies": "Typescript, Twig, jQuey, Bootstrap4, JavaScript, SASS",
         "description": "",
         "category": "Admake",
         "link": "",
@@ -587,6 +614,16 @@ var projects = [
         "description": "",
         "category": "Admake",
         "link": "https://cordeiro.netlify.com/",
+        "status": "Em desenvolvimento"
+    },
+    {
+        "name": "Dupé",
+        "type": "Front-end",
+        "logo": "",
+        "technologies": "Typescript, jQuery, Twig, Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "",
         "status": "Em desenvolvimento"
     },
     {
@@ -622,11 +659,21 @@ var projects = [
     {
         "name": "Astuti Casa",
         "type": "Front-end",
-        "logo": "",
+        "logo": "https://www.astuticasa.com.br/static/store/logo-4779d1fa-e8a4-42c8-a0de-55409ab13825.png",
         "technologies": "Angular, Bootstrap4, JavaScript, SASS",
         "description": "",
         "category": "Admake",
         "link": "https://astuticasa.com.br/",
+        "status": "Concluído"
+    },
+    {
+        "name": "VellBizz",
+        "type": "Front-end",
+        "logo": "",
+        "technologies": "Bootstrap4, JavaScript, SASS, jQuery",
+        "description": "",
+        "category": "Admake",
+        "link": "",
         "status": "Concluído"
     },
     {
@@ -649,6 +696,26 @@ var projects = [
         "link": "http://blog.lojacuba.com.br/",
         "status": "concluído"
     },
+    {
+        "name": "Candy Lover Store",
+        "type": "Front-end",
+        "logo": "https://cdn.awsli.com.br/400x300/546/546245/logo/6554a068d7.png",
+        "technologies": "Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://www.candyloverstore.com.br/",
+        "status": "concluído"
+    },
+    {
+        "name": "Seja Cachos",
+        "type": "Front-end",
+        "logo": "https://cdn.awsli.com.br/400x300/529/529091/logo/5df0928596.png",
+        "technologies": "Bootstrap4, JavaScript, SASS",
+        "description": "",
+        "category": "Admake",
+        "link": "https://loja.sejacachos.com.br/",
+        "status": "concluído"
+    }
 ]
 
 var jobs = [
@@ -867,6 +934,13 @@ class Components {
         setTimeout(function () {
 
             let skillsByTechType = []
+
+            skillsByTechType.push( { "order": 1, "name": "Linguagem de programação", "elements": [] } );
+            skillsByTechType.push( { "order": 2, "name": "Linguagem de marcação", "elements": [] } );
+            skillsByTechType.push( { "order": 4, "name": "Java Framework", "elements": [] } );
+            skillsByTechType.push( { "order": 5, "name": "JavaScript Library", "elements": [] } );
+            skillsByTechType.push( { "order": 6, "name": "JavaScript Framework", "elements": [] } );
+
             skills.forEach(element => {
 
                 if (type == null || (element.type == type || element.type == "Full Stack")) {
@@ -899,7 +973,7 @@ class Components {
                     if (element.knowledgePercentage > 0) {
                         let skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
                         if (skill == null) {
-                            skill = { "name": element.technologyType, "elements": [] };
+                            skill = { "order": 10, "name": element.technologyType, "elements": [] };
                             skillsByTechType.push(skill);
                         }
                         skill.elements.push(element);
@@ -907,6 +981,8 @@ class Components {
                 }
 
             });
+
+            skillsByTechType.sort(Components.compareByOrder);
 
             skillsByTechType.forEach(element => {
                 var section = $(`
@@ -990,10 +1066,18 @@ class Components {
 
     }
 
-    static compare(a, b) {
+    static compareByKnowledge(a, b) {
         if (a.knowledgePercentage > b.knowledgePercentage)
             return -1;
         if (a.knowledgePercentage < b.knowledgePercentage)
+            return 1;
+        return 0;
+    }
+
+    static compareByOrder(a, b) {
+        if (a.order < b.order)
+            return -1;
+        if (a.order > b.order)
             return 1;
         return 0;
     }
@@ -1048,7 +1132,7 @@ $(document).ready(function () {
         `)
     });
 
-    skills.sort(Components.compare);
+    skills.sort(Components.compareByKnowledge);
     Components.changeDevtype(null);
 
     jobs.forEach(element => {
