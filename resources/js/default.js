@@ -122,7 +122,7 @@ var skills = [
     {
         "name": "Node",
         "type": "Back-end",
-        "technologyType": "Javascript Framework",
+        "technologyType": "JavaScript Framework",
         "knowledgePercentage": 40,
         "description": "",
         "experience": ""
@@ -130,7 +130,7 @@ var skills = [
     {
         "name": "Angular",
         "type": "Front-end",
-        "technologyType": "Javascript Framework",
+        "technologyType": "JavaScript Framework",
         "knowledgePercentage": 20,
         "description": "",
         "experience": ""
@@ -138,7 +138,7 @@ var skills = [
     {
         "name": "React",
         "type": "Front-end",
-        "technologyType": "Javascript Framework",
+        "technologyType": "JavaScript Framework",
         "knowledgePercentage": 10,
         "description": "",
         "experience": ""
@@ -146,16 +146,8 @@ var skills = [
     {
         "name": "jQuery",
         "type": "Front-end",
-        "technologyType": "Javascript Library",
+        "technologyType": "JavaScript Library",
         "knowledgePercentage": 100,
-        "description": "",
-        "experience": ""
-    },
-    {
-        "name": "Slick",
-        "type": "Front-end",
-        "technologyType": "Javascript Library",
-        "knowledgePercentage": 0,
         "description": "",
         "experience": ""
     },
@@ -210,7 +202,7 @@ var skills = [
     {
         "name": "Bootstrap",
         "type": "Front-end",
-        "technologyType": "HTML Library",
+        "technologyType": "Front-end Library",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -307,7 +299,7 @@ var skills = [
         "name": "LWJGL",
         "type": "Game Development",
         "technologyType": "Java Library",
-        "knowledgePercentage": 0,
+        "knowledgePercentage": 80,
         "description": "",
         "experience": ""
     },
@@ -323,7 +315,7 @@ var skills = [
         "name": "MVC",
         "type": "Back-end",
         "technologyType": "Programming knowledge",
-        "knowledgePercentage": 0,
+        "knowledgePercentage": 100,
         "description": "",
         "experience": ""
     },
@@ -331,7 +323,7 @@ var skills = [
         "name": "UML",
         "type": "Back-end",
         "technologyType": "Programming knowledge",
-        "knowledgePercentage": 0,
+        "knowledgePercentage": 50,
         "description": "",
         "experience": ""
     },
@@ -339,13 +331,45 @@ var skills = [
         "name": "SCRUM",
         "type": "Back-end",
         "technologyType": "Programming knowledge",
-        "knowledgePercentage": 0,
+        "knowledgePercentage": 50,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "AJAX",
+        "type": "Front-end",
+        "technologyType": "Programming knowledge",
+        "knowledgePercentage": 70,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "GIT",
+        "type": "Full Stack",
+        "technologyType": "Version Control System",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Subversion",
+        "type": "Full Stack",
+        "technologyType": "Version Control System",
+        "knowledgePercentage": 80,
         "description": "",
         "experience": ""
     },
     {
         "name": "JSON",
         "type": "Front-end",
+        "technologyType": "JavaScript Library",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Astah",
+        "type": "Back-end",
         "technologyType": "Programming knowledge",
         "knowledgePercentage": 0,
         "description": "",
@@ -355,12 +379,12 @@ var skills = [
         "name": "JAX-RS",
         "type": "Back-end",
         "technologyType": "Programming knowledge",
-        "knowledgePercentage": 0,
+        "knowledgePercentage": 50,
         "description": "",
         "experience": ""
     },
     {
-        "name": "Apache TOMCAT",
+        "name": "TOMCAT",
         "type": "Back-end",
         "technologyType": "Server",
         "knowledgePercentage": 80,
@@ -380,6 +404,30 @@ var skills = [
         "type": "Back-end",
         "technologyType": "Server",
         "knowledgePercentage": 50,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Ubuntu",
+        "type": "Computer Network",
+        "technologyType": "Operational System",
+        "knowledgePercentage": 50,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "Windows",
+        "type": "Computer Network",
+        "technologyType": "Operational System",
+        "knowledgePercentage": 80,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "macOS",
+        "type": "Computer Network",
+        "technologyType": "Operational System",
+        "knowledgePercentage": 0,
         "description": "",
         "experience": ""
     }
@@ -553,7 +601,7 @@ var jobs = [
         "post": "Servidor Público",
         "description": "Servidor público efetivo, atuando com rotinas administrativas, atendimento ao público, elaboração do documentos e planilhas com excel, word, pwp, etc.",
         "category": "Efetivo",
-        "link": "",
+        "link": "#",
         "start": "01/03/2013",
         "end": "20/08/2017"
     },
@@ -563,7 +611,7 @@ var jobs = [
         "post": "Estágio monitor de estrutura de dados",
         "description": "Estágio de Ensino Superior atuando como monitor de Estrutura de Dados para a Linguagem C/C++",
         "category": "Estágiário",
-        "link": "",
+        "link": "#",
         "start": "01/08/2016",
         "end": "01/10/2016"
     },
@@ -573,7 +621,7 @@ var jobs = [
         "post": "Estágio como desenvolvedor front-end",
         "description": "Estágio de Ensino Superior atuando com JavaScript, Applets, Bootstrap, etc.",
         "category": "Estágiário",
-        "link": "",
+        "link": "#",
         "start": "01/08/2016",
         "end": "01/10/2016"
     },
@@ -583,7 +631,7 @@ var jobs = [
         "post": "Estágio como monitor de laboratório de informática",
         "description": "Estágio de Ensino Médio atuando com manutenção em laboratório de informática de escola pública",
         "category": "Estágiário",
-        "link": "",
+        "link": "#",
         "start": "01/08/2016",
         "end": "01/10/2016"
     }
@@ -616,7 +664,7 @@ var academic = [
     {
         "school": "Udemy",
         "course": "Web Moderno com JavaScript! COMPLETO 2018 + Projetos",
-        "description": "13 cursos - Javascript React VueJS Node HTML CSS Gulp Webpack jQuery Bootstrap e muito mais",
+        "description": "13 cursos - JavaScript React VueJS Node HTML CSS Gulp Webpack jQuery Bootstrap e muito mais",
         "type": "Curso",
         "start": "2018",
         "end": ""
@@ -836,7 +884,7 @@ $(document).ready(function () {
         };
     });
     academic.forEach(function (element) {
-        $("#academic .card-columns").append("\n            <div class=\"card " + (element.end == '' ? 'bg-secondary' : '') + "\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.school + "</a></h5>\n                    <span class=\"d-block course\">" + element.course + "</span>\n                    <span class=\"type badge badge-dark\">" + element.type + "</span>\n                    <p class=\"card-text\">\n                        " + element.description + "\n                    </p>\n                    <p class=\"card-text\">\n                        <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                    </p>\n                </div>\n            </div>\n        ");
+        $("#academic .card-columns").append("\n            <div class=\"card " + (element.end == '' ? 'bg-secondary' : '') + "\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">" + element.school + "</h5>\n                    <span class=\"d-block course\">" + element.course + "</span>\n                    <span class=\"type badge badge-dark\">" + element.type + "</span>\n                    <p class=\"card-text\">\n                        " + element.description + "\n                    </p>\n                    <p class=\"card-text\">\n                        <small class=\"text-muted\">" + element.start + " " + (element.end != '' ? '- ' + element.end : '') + "</small>\n                    </p>\n                </div>\n            </div>\n        ");
     });
     languages.forEach(function (element) {
         $("#languages .card-columns").append("\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">" + element.name + "</h5>\n                    <p class=\"card-text\">\n                        " + element.level + "\n                    </p>\n                </div>\n            </div>\n        ");
