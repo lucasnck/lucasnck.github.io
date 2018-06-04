@@ -26,6 +26,10 @@ var menu = [
     {
         "title": "Formação Acadêmica",
         "link": "#academic"
+    }, ,
+    {
+        "title": "Artigos",
+        "link": "#articles"
     },
     {
         "title": "Idiomas",
@@ -760,6 +764,35 @@ var languages = [
         "level": "Técnico"
     }
 ];
+var publishedArticles = [
+    {
+        "name": "Web Artifacts Generator support IDE Desktop",
+        "image": "resources/img/articles/uspsp.jpg",
+        "institution": "USP de São Paulo",
+        "eventName": "2º Etapa Internacional do 24º Simpósio Internacional de Iniciação Científica e Tecnológica da USP - SIICUSP",
+        "city": "São Paulo",
+        "date": "2016",
+        "description": "This work presents a web artifacts generator that with modeling, forms and drag and drop elements, facilitates the development of JavaServer Faces (JSF) applications, automating the generator of major artifacts based on this architecture: ManagedBeans, Data Access Object (DAO), User Interfaces and JPA Persistence Entities. This tools uses the concepts of Fluent Interface and Abstract Syntax Tree (AST). A autenticidade deste documento pode ser verificada na página da Universidade de São Paulo http://uspdigital.usp.br/webdoc"
+    },
+    {
+        "name": "Gerador de Artefatos e Projetos Web",
+        "image": "resources/img/articles/fateclins.jpg",
+        "institution": "Fatec Lins",
+        "eventName": "II Congresso de Iniciação Científica e Tecnológica Fatec Lins",
+        "city": "Lins",
+        "date": "2016",
+        "description": "O presente trabalho apresenta uma ferramenta web para auxiliar no desenvolvimento de aplicações JavaServer Faces automatizando a geração de artefatos e projetos, por meio de modelagem de entidades e relacionamentos, preenchimento de formulários e a utilização de elementos Drag-and-Drop. Os artefatos produzidos são baseados na arquitetura JSF: ManagedBeans, Entidades de Persistência, Data Access Object (DAO) e Interfaces de Usuário e tal ferramenta faz uso de conceitos de Fluent Interfaces e Abstract Syntax Tree (AST). Os artefatos produzidos podem ser utilizados em aplicações Web e o seu funcionamento é satisfatório. Palavras-chave:JAVASERVER FACES; GERADOR DE ARTEFATOS; AUTOMATIZAÇÃO DE CÓDIGO; SISTEMAS WEB"
+    },
+    {
+        "name": "Gerador de Artefatos Web compatível com IDE Desktop",
+        "image": "resources/img/articles/uspsc.jpg",
+        "institution": "USP de São Carlos",
+        "eventName": "1º Etapa do 24º Simpósio Internacional de Iniciação Científica e Tecnológica da USP - SIICUSP",
+        "city": "São Carlos",
+        "date": "2016",
+        "description": "Este trabalho apresenta um gerador de artefatos web que, por meio de modelagem, formulários e elementos drag and drop, facilitando o desenvolvimento de aplicações JavaServer Faces (JSF), automatizando a geração dos principais artefatos de uma aplicação baseada nessa arquitetura: ManagedBeans, Data Access Object (DAO), interfaces de usuário e as Entidades de Persistência JPA. Tal ferramenta faz uso de conceitos de Fluent Interface e Abstract Syntax Tree (AST)."
+    }
+];
 /**
  * Components Helper Class
 */
@@ -965,6 +998,9 @@ $(document).ready(function () {
     });
     languages.forEach(function (element) {
         $("#languages .card-columns").append("\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">" + element.name + "</h5>\n                    <p class=\"card-text\">\n                        " + element.level + "\n                    </p>\n                </div>\n            </div>\n        ");
+    });
+    publishedArticles.forEach(function (element) {
+        $("#articles .card-columns").append("\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"" + element.image + "\" alt=\"" + element.name + "\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">\n                        " + element.name + "\n                        <small class=\"d-block text-muted\">" + element.eventName + "</small>\n                    </h5>\n                    <span class=\"badge badge-secondary\">\n                        " + element.institution + "\n                    </span>\n                    <p class=\"card-text\">\n                        " + element.description + "\n                    </p>\n                    <p class=\"card-text\">\n                        <small class=\"text-muted\">" + element.date + "</small>\n                    </p>\n                </div>\n            </div>\n        ");
     });
     // Bootstrap scrollspy
     $('body').scrollspy({ target: '#navbar-section' });
