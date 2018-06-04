@@ -252,7 +252,7 @@ var skills = [
 
         "name": "SASS",
         "type": "Front-end",
-        "technologyType": "Linguagem de marcação",
+        "technologyType": "Linguagem web",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -261,7 +261,7 @@ var skills = [
 
         "name": "CSS3",
         "type": "Front-end",
-        "technologyType": "Linguagem de marcação",
+        "technologyType": "Linguagem web",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -270,7 +270,25 @@ var skills = [
 
         "name": "HTML5",
         "type": "Front-end",
-        "technologyType": "Linguagem de marcação",
+        "technologyType": "Linguagem web",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+
+        "name": "XHTML",
+        "type": "Front-end",
+        "technologyType": "Linguagem web",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+
+        "name": "XML",
+        "type": "Front-end",
+        "technologyType": "Linguagem web",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -971,7 +989,7 @@ class Components {
             let skillsByTechType = []
 
             skillsByTechType.push( { "order": 1, "name": "Linguagem de programação", "elements": [] } );
-            skillsByTechType.push( { "order": 2, "name": "Linguagem de marcação", "elements": [] } );
+            skillsByTechType.push( { "order": 2, "name": "Linguagem web", "elements": [] } );
             skillsByTechType.push( { "order": 4, "name": "Java Framework", "elements": [] } );
             skillsByTechType.push( { "order": 5, "name": "JavaScript Library", "elements": [] } );
             skillsByTechType.push( { "order": 6, "name": "JavaScript Framework", "elements": [] } );
@@ -1020,32 +1038,33 @@ class Components {
             skillsByTechType.sort(Components.compareByOrder);
 
             skillsByTechType.forEach(element => {
-                var section = $(`
-                        <div class="section">
-                            <h5>${element.name}</h5>
-                            <ul>
-                            </ul>
-                        </div>
-                    `)
-                section.appendTo("#skills .sections");
+                if( element.elements.length > 0 ) {
+                    var section = $(`
+                            <div class="section">
+                                <h5>${element.name}</h5>
+                                <ul>
+                                </ul>
+                            </div>
+                        `)
+                    section.appendTo("#skills .sections");
 
-                element.elements.forEach(skill => {
-                    if (skill.knowledgePercentage > 0) {
-                        if (type == null || (skill.type == type || skill.type == "Full Stack")) {
+                    element.elements.forEach(skill => {
+                        if (skill.knowledgePercentage > 0) {
+                            if (type == null || (skill.type == type || skill.type == "Full Stack")) {
 
-                            section.find("ul").append(`
-                                <li data-name="${skill.name}">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: ${skill.knowledgePercentage}%" aria-valuenow="${skill.knowledgePercentage}" aria-valuemin="0" aria-valuemax="100">
-                                            ${skill.name}
+                                section.find("ul").append(`
+                                    <li data-name="${skill.name}">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: ${skill.knowledgePercentage}%" aria-valuenow="${skill.knowledgePercentage}" aria-valuemin="0" aria-valuemax="100">
+                                                ${skill.name}
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            `);
+                                    </li>
+                                `);
+                            }
                         }
-                    }
-                });
-
+                    });
+                }
             });
 
             projects.forEach(element => {

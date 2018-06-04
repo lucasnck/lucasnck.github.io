@@ -214,7 +214,7 @@ var skills = [
     {
         "name": "SASS",
         "type": "Front-end",
-        "technologyType": "Linguagem de marcação",
+        "technologyType": "Linguagem web",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -222,7 +222,7 @@ var skills = [
     {
         "name": "CSS3",
         "type": "Front-end",
-        "technologyType": "Linguagem de marcação",
+        "technologyType": "Linguagem web",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -230,7 +230,23 @@ var skills = [
     {
         "name": "HTML5",
         "type": "Front-end",
-        "technologyType": "Linguagem de marcação",
+        "technologyType": "Linguagem web",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "XHTML",
+        "type": "Front-end",
+        "technologyType": "Linguagem web",
+        "knowledgePercentage": 100,
+        "description": "",
+        "experience": ""
+    },
+    {
+        "name": "XML",
+        "type": "Front-end",
+        "technologyType": "Linguagem web",
         "knowledgePercentage": 100,
         "description": "",
         "experience": ""
@@ -884,7 +900,7 @@ var Components = /** @class */ (function () {
         setTimeout(function () {
             var skillsByTechType = [];
             skillsByTechType.push({ "order": 1, "name": "Linguagem de programação", "elements": [] });
-            skillsByTechType.push({ "order": 2, "name": "Linguagem de marcação", "elements": [] });
+            skillsByTechType.push({ "order": 2, "name": "Linguagem web", "elements": [] });
             skillsByTechType.push({ "order": 4, "name": "Java Framework", "elements": [] });
             skillsByTechType.push({ "order": 5, "name": "JavaScript Library", "elements": [] });
             skillsByTechType.push({ "order": 6, "name": "JavaScript Framework", "elements": [] });
@@ -912,15 +928,17 @@ var Components = /** @class */ (function () {
             });
             skillsByTechType.sort(Components.compareByOrder);
             skillsByTechType.forEach(function (element) {
-                var section = $("\n                        <div class=\"section\">\n                            <h5>" + element.name + "</h5>\n                            <ul>\n                            </ul>\n                        </div>\n                    ");
-                section.appendTo("#skills .sections");
-                element.elements.forEach(function (skill) {
-                    if (skill.knowledgePercentage > 0) {
-                        if (type == null || (skill.type == type || skill.type == "Full Stack")) {
-                            section.find("ul").append("\n                                <li data-name=\"" + skill.name + "\">\n                                    <div class=\"progress\">\n                                        <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                            " + skill.name + "\n                                        </div>\n                                    </div>\n                                </li>\n                            ");
+                if (element.elements.length > 0) {
+                    var section = $("\n                            <div class=\"section\">\n                                <h5>" + element.name + "</h5>\n                                <ul>\n                                </ul>\n                            </div>\n                        ");
+                    section.appendTo("#skills .sections");
+                    element.elements.forEach(function (skill) {
+                        if (skill.knowledgePercentage > 0) {
+                            if (type == null || (skill.type == type || skill.type == "Full Stack")) {
+                                section.find("ul").append("\n                                    <li data-name=\"" + skill.name + "\">\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                                " + skill.name + "\n                                            </div>\n                                        </div>\n                                    </li>\n                                ");
+                            }
                         }
-                    }
-                });
+                    });
+                }
             });
             projects.forEach(function (element) {
                 if (type == null || (element.type == type || element.type == "Full Stack")) {
