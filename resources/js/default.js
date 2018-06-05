@@ -895,8 +895,9 @@ var Components = /** @class */ (function () {
     };
     Components.changeDevtype = function (type) {
         $(".other-skills ul").empty();
-        $(".section").empty();
+        $("#skills .sections").empty();
         $("#projects .card-columns").empty();
+        $(".other-skills ul, #skills .sections, #projects .card-columns").prepend("\n            <div class=\"loader\">\n                <i class=\"fas fa-spinner fa-spin\"></i>\n            </div>\n        ");
         setTimeout(function () {
             var skillsByTechType = [];
             skillsByTechType.push({ "order": 1, "name": "Linguagem de programação", "elements": [] });
@@ -904,57 +905,96 @@ var Components = /** @class */ (function () {
             skillsByTechType.push({ "order": 4, "name": "Java Framework", "elements": [] });
             skillsByTechType.push({ "order": 5, "name": "JavaScript Library", "elements": [] });
             skillsByTechType.push({ "order": 6, "name": "JavaScript Framework", "elements": [] });
+            var skillsByType = [];
             skills.forEach(function (element) {
                 if (type == null || (element.type == type || element.type == "Full Stack")) {
-                    var imageUrl = "resources/img/skills/" + element.name.replace("/", "-").toLowerCase() + ".png";
-                    var image = new Image();
-                    image.src = imageUrl;
-                    image.onload = function () {
-                        $(".other-skills ul").append("\n                        <li data-name=\"" + element.name + "\">\n                            <a href=\"#" + element.name + "\">\n                                <img src=\"" + imageUrl + "\"> \n                                <span class=\"title\">" + element.name + "</span>\n                            </a>\n                        </li>\n                    ");
-                    };
-                    image.onerror = function () {
-                        imageUrl = "resources/img/favicon.png";
-                        $(".other-skills ul").append("\n                        <li class=\"no-image\" data-name=\"" + element.name + "\">\n                            <a href=\"#" + element.name + "\">\n                                <img src=\"" + imageUrl + "\"> \n                                <span class=\"title\">" + element.name + "</span>\n                            </a>\n                        </li>\n                    ");
-                    };
-                    if (element.knowledgePercentage > 0) {
-                        var skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
-                        if (skill == null) {
-                            skill = { "order": 10, "name": element.technologyType, "elements": [] };
-                            skillsByTechType.push(skill);
-                        }
-                        skill.elements.push(element);
+                    skillsByType.push(element);
+                }
+            });
+            var t = setInterval(function () {
+                var otherSkillsList = $('.other-skills ul li');
+                if (otherSkillsList.length == skillsByType.length) {
+                    $('.other-skills ul .loader').remove();
+                    clearInterval(t);
+                }
+            }, 500);
+            skillsByType.forEach(function (element) {
+                var imageUrl = "resources/img/skills/" + element.name.replace("/", "-").toLowerCase() + ".png";
+                var image = new Image();
+                image.src = imageUrl;
+                image.onload = function () {
+                    $(".other-skills ul").append("\n                    <li data-name=\"" + element.name + "\">\n                        <a href=\"#" + element.name + "\">\n                            <img src=\"" + imageUrl + "\"> \n                            <span class=\"title\">" + element.name + "</span>\n                        </a>\n                    </li>\n                ");
+                };
+                image.onerror = function () {
+                    imageUrl = "resources/img/favicon.png";
+                    $(".other-skills ul").append("\n                    <li class=\"no-image\" data-name=\"" + element.name + "\">\n                        <a href=\"#" + element.name + "\">\n                            <img src=\"" + imageUrl + "\"> \n                            <span class=\"title\">" + element.name + "</span>\n                        </a>\n                    </li>\n                ");
+                };
+                if (element.knowledgePercentage > 0) {
+                    var skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
+                    if (skill == null) {
+                        skill = { "order": 10, "name": element.technologyType, "elements": [] };
+                        skillsByTechType.push(skill);
                     }
+                    skill.elements.push(element);
                 }
             });
             skillsByTechType.sort(Components.compareByOrder);
+            var skillsByTechTypeAux = [];
             skillsByTechType.forEach(function (element) {
                 if (element.elements.length > 0) {
-                    var section = $("\n                            <div class=\"section\">\n                                <h5>" + element.name + "</h5>\n                                <ul>\n                                </ul>\n                            </div>\n                        ");
-                    section.appendTo("#skills .sections");
-                    element.elements.forEach(function (skill) {
-                        if (skill.knowledgePercentage > 0) {
-                            if (type == null || (skill.type == type || skill.type == "Full Stack")) {
-                                section.find("ul").append("\n                                    <li data-name=\"" + skill.name + "\">\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                                " + skill.name + "\n                                            </div>\n                                        </div>\n                                    </li>\n                                ");
-                            }
-                        }
-                    });
+                    skillsByTechTypeAux.push(element);
                 }
             });
+            var t2 = setInterval(function () {
+                var sections = $('#skills .sections .section');
+                if (sections.length == skillsByTechTypeAux.length) {
+                    $('#skills .sections .loader').remove();
+                    clearInterval(t2);
+                }
+            }, 500);
+            skillsByTechTypeAux.forEach(function (element) {
+                var section = $("\n                        <div class=\"section\">\n                            <h5>" + element.name + "</h5>\n                            <ul>\n                            </ul>\n                        </div>\n                    ");
+                section.appendTo("#skills .sections");
+                element.elements.forEach(function (skill) {
+                    if (type == null || (skill.type == type || skill.type == "Full Stack")) {
+                        section.find("ul").append("\n                            <li data-name=\"" + skill.name + "\">\n                                <div class=\"progress\">\n                                    <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                        " + skill.name + "\n                                    </div>\n                                </div>\n                            </li>\n                        ");
+                    }
+                });
+            });
+            var projectsByType = [];
             projects.forEach(function (element) {
                 if (type == null || (element.type == type || element.type == "Full Stack")) {
-                    var imageUrl = "" + element.logo;
-                    var image = new Image();
-                    image.src = imageUrl;
-                    image.onload = function () {
-                        $("#projects .card-columns").append("\n                            <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                                <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                                " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                                <div class=\"card-body\">\n                                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                    <p class=\"card-text\">\n                                        " + element.description + "\n                                    </p>\n                                    <p class=\"card-text\">\n                                        <small class=\"text-muted\">" + element.technologies + "</small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
-                    };
-                    image.onerror = function () {
-                        $("#projects .card-columns").append("\n                            <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                                " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                                <div class=\"card-body\">\n                                    <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                    <p class=\"card-text\">\n                                        " + element.description + "\n                                    </p>\n                                    <p class=\"card-text\">\n                                        <small class=\"text-muted\">" + element.technologies + "</small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
-                    };
+                    projectsByType.push(element);
                 }
             });
-            $(".dev-type-modal").modal('hide');
-        }, 2000);
+            projectsByType.forEach(function (element) {
+                var imageUrl = "" + element.logo;
+                var image = new Image();
+                image.src = imageUrl;
+                image.onload = function () {
+                    $("#projects .card-columns").append("\n                        <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                            <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                            " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                <p class=\"card-text\">\n                                    " + element.description + "\n                                </p>\n                                <p class=\"card-text\">\n                                    <small class=\"text-muted\">" + element.technologies + "</small>\n                                </p>\n                            </div>\n                        </div>\n                    ");
+                };
+                image.onerror = function () {
+                    $("#projects .card-columns").append("\n                        <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                            " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                <p class=\"card-text\">\n                                    " + element.description + "\n                                </p>\n                                <p class=\"card-text\">\n                                    <small class=\"text-muted\">" + element.technologies + "</small>\n                                </p>\n                            </div>\n                        </div>\n                    ");
+                };
+            });
+            var t3 = setInterval(function () {
+                var cards = $('#projects .card-columns .card');
+                if (cards.length == projectsByType.length) {
+                    $('#projects .card-columns .loader').remove();
+                    clearInterval(t3);
+                }
+            }, 500);
+            var t4 = setInterval(function () {
+                var cards = $('#projects .card-columns .card');
+                var sections = $('#skills .sections .section');
+                var otherSkillsList = $('.other-skills ul li');
+                if (cards.length == projectsByType.length && sections.length == skillsByTechTypeAux.length && otherSkillsList.length == skillsByType.length) {
+                    $(".dev-type-modal").modal('hide');
+                    clearInterval(t4);
+                }
+            }, 500);
+        }, 3000);
     };
     Components.compareByKnowledge = function (a, b) {
         if (a.knowledgePercentage > b.knowledgePercentage)

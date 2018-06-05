@@ -613,3 +613,26 @@ a, a:hover {
   max-width: 100%;
   margin-top: 0;
 }
+
+/* line 499, sass/default.scss */
+.card-columns {
+  position: relative;
+}
+
+/* line 502, sass/default.scss */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 9;
+  border-radius: 100%;
+}
+/* line 509, sass/default.scss */
+.loader i {
+  font-size: 50px;
+  color: #0796ff;
+}

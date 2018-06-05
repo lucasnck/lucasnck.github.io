@@ -493,3 +493,21 @@ a, a:hover {
     max-width: 100%;
     margin-top: 0;
 }
+
+
+
+.card-columns {
+    position: relative;
+}
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translateY(-50%) translateX(-50%));
+    z-index: 9;
+    border-radius: 100%;
+    i {
+        font-size: 50px;
+        color: #0796ff;
+    }
+}

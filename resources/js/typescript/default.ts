@@ -35,12 +35,12 @@ var menu = [
 
         "title": "Formação Acadêmica",
         "link": "#academic"
-    },,
+    }, ,
     {
 
         "title": "Artigos",
         "link": "#articles"
-    }
+    },
     {
 
         "title": "Idiomas",
@@ -760,7 +760,7 @@ var jobs = [
         "category": "Efetivo",
         "link": "#",
         "start": "01/03/2013",
-        "end": "20/08/2017" 
+        "end": "20/08/2017"
     },
     {
         "name": "Monitor de Estrutura de Dados",
@@ -981,141 +981,202 @@ class Components {
     static changeDevtype(type) {
 
         $(".other-skills ul").empty();
-        $(".section").empty();
+        $("#skills .sections").empty();
         $("#projects .card-columns").empty();
+
+        $(".other-skills ul, #skills .sections, #projects .card-columns").prepend(`
+            <div class="loader">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+        `)
 
         setTimeout(function () {
 
             let skillsByTechType = []
 
-            skillsByTechType.push( { "order": 1, "name": "Linguagem de programação", "elements": [] } );
-            skillsByTechType.push( { "order": 2, "name": "Linguagem web", "elements": [] } );
-            skillsByTechType.push( { "order": 4, "name": "Java Framework", "elements": [] } );
-            skillsByTechType.push( { "order": 5, "name": "JavaScript Library", "elements": [] } );
-            skillsByTechType.push( { "order": 6, "name": "JavaScript Framework", "elements": [] } );
+            skillsByTechType.push({ "order": 1, "name": "Linguagem de programação", "elements": [] });
+            skillsByTechType.push({ "order": 2, "name": "Linguagem web", "elements": [] });
+            skillsByTechType.push({ "order": 4, "name": "Java Framework", "elements": [] });
+            skillsByTechType.push({ "order": 5, "name": "JavaScript Library", "elements": [] });
+            skillsByTechType.push({ "order": 6, "name": "JavaScript Framework", "elements": [] });
+
+            let skillsByType = [];
 
             skills.forEach(element => {
 
                 if (type == null || (element.type == type || element.type == "Full Stack")) {
-
-                    var imageUrl = `resources/img/skills/${element.name.replace("/", "-").toLowerCase()}.png`;
-                    var image = new Image();
-                    image.src = imageUrl;
-                    image.onload = function () {
-                        $(".other-skills ul").append(`
-                        <li data-name="${element.name}">
-                            <a href="#${element.name}">
-                                <img src="${imageUrl}"> 
-                                <span class="title">${element.name}</span>
-                            </a>
-                        </li>
-                    `);
-                    }
-                    image.onerror = function () {
-                        imageUrl = `resources/img/favicon.png`;
-                        $(".other-skills ul").append(`
-                        <li class="no-image" data-name="${element.name}">
-                            <a href="#${element.name}">
-                                <img src="${imageUrl}"> 
-                                <span class="title">${element.name}</span>
-                            </a>
-                        </li>
-                    `);
-                    }
-
-                    if (element.knowledgePercentage > 0) {
-                        let skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
-                        if (skill == null) {
-                            skill = { "order": 10, "name": element.technologyType, "elements": [] };
-                            skillsByTechType.push(skill);
-                        }
-                        skill.elements.push(element);
-                    }
+                    skillsByType.push(element);
                 }
 
+            });
+
+            let t = setInterval(function () {
+                let otherSkillsList = $('.other-skills ul li');
+                if (otherSkillsList.length == skillsByType.length) {
+                    $('.other-skills ul .loader').remove();
+                    clearInterval(t);
+                }
+            }, 500);
+
+            skillsByType.forEach(element => {
+                var imageUrl = `resources/img/skills/${element.name.replace("/", "-").toLowerCase()}.png`;
+                var image = new Image();
+                image.src = imageUrl;
+                image.onload = function () {
+                    $(".other-skills ul").append(`
+                    <li data-name="${element.name}">
+                        <a href="#${element.name}">
+                            <img src="${imageUrl}"> 
+                            <span class="title">${element.name}</span>
+                        </a>
+                    </li>
+                `);
+                }
+                image.onerror = function () {
+                    imageUrl = `resources/img/favicon.png`;
+                    $(".other-skills ul").append(`
+                    <li class="no-image" data-name="${element.name}">
+                        <a href="#${element.name}">
+                            <img src="${imageUrl}"> 
+                            <span class="title">${element.name}</span>
+                        </a>
+                    </li>
+                `);
+                }
+
+                if (element.knowledgePercentage > 0) {
+                    let skill = Components.findObjectByKey(skillsByTechType, "name", element.technologyType);
+                    if (skill == null) {
+                        skill = { "order": 10, "name": element.technologyType, "elements": [] };
+                        skillsByTechType.push(skill);
+                    }
+                    skill.elements.push(element);
+                }
             });
 
             skillsByTechType.sort(Components.compareByOrder);
 
+            let skillsByTechTypeAux = []
             skillsByTechType.forEach(element => {
-                if( element.elements.length > 0 ) {
-                    var section = $(`
-                            <div class="section">
-                                <h5>${element.name}</h5>
-                                <ul>
-                                </ul>
-                            </div>
-                        `)
-                    section.appendTo("#skills .sections");
-
-                    element.elements.forEach(skill => {
-                        if (skill.knowledgePercentage > 0) {
-                            if (type == null || (skill.type == type || skill.type == "Full Stack")) {
-
-                                section.find("ul").append(`
-                                    <li data-name="${skill.name}">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: ${skill.knowledgePercentage}%" aria-valuenow="${skill.knowledgePercentage}" aria-valuemin="0" aria-valuemax="100">
-                                                ${skill.name}
-                                            </div>
-                                        </div>
-                                    </li>
-                                `);
-                            }
-                        }
-                    });
+                if (element.elements.length > 0) {
+                    skillsByTechTypeAux.push(element);
                 }
             });
+
+            let t2 = setInterval(function () {
+
+                let sections = $('#skills .sections .section');
+                    
+                if (sections.length == skillsByTechTypeAux.length) {
+                    $('#skills .sections .loader').remove();
+                    clearInterval(t2);
+                }
+            }, 500);
+
+            skillsByTechTypeAux.forEach(element => {
+                var section = $(`
+                        <div class="section">
+                            <h5>${element.name}</h5>
+                            <ul>
+                            </ul>
+                        </div>
+                    `)
+                section.appendTo("#skills .sections");
+
+                element.elements.forEach(skill => {
+                    if (type == null || (skill.type == type || skill.type == "Full Stack")) {
+
+                        section.find("ul").append(`
+                            <li data-name="${skill.name}">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: ${skill.knowledgePercentage}%" aria-valuenow="${skill.knowledgePercentage}" aria-valuemin="0" aria-valuemax="100">
+                                        ${skill.name}
+                                    </div>
+                                </div>
+                            </li>
+                        `);
+                    }
+                });
+            });
+
+            let projectsByType = [];
 
             projects.forEach(element => {
 
                 if (type == null || (element.type == type || element.type == "Full Stack")) {
-
-                    var imageUrl = `${element.logo}`;
-                    var image = new Image();
-                    image.src = imageUrl;
-
-                    image.onload = function () {
-                        $("#projects .card-columns").append(`
-                            <div class="card${element.status == "Em desenvolvimento" ? ' development' : ''}">
-                                <img class="card-img-top" src="${element.logo}" alt="${element.name}">
-                                ${element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : ''}
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
-                                    <p class="card-text">
-                                        ${element.description}
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">${element.technologies}</small>
-                                    </p>
-                                </div>
-                            </div>
-                        `)
-                    }
-                    image.onerror = function () {
-                        $("#projects .card-columns").append(`
-                            <div class="card${element.status == "Em desenvolvimento" ? ' development' : ''}">
-                                ${element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : ''}
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
-                                    <p class="card-text">
-                                        ${element.description}
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">${element.technologies}</small>
-                                    </p>
-                                </div>
-                            </div>
-                        `)
-                    }
-
+                    projectsByType.push(element)
                 }
 
             });
 
-            $(".dev-type-modal").modal('hide')
+            projectsByType.forEach(element => {
 
-        }, 2000);
+                var imageUrl = `${element.logo}`;
+                var image = new Image();
+                image.src = imageUrl;
+
+                image.onload = function () {
+                    $("#projects .card-columns").append(`
+                        <div class="card${element.status == "Em desenvolvimento" ? ' development' : ''}">
+                            <img class="card-img-top" src="${element.logo}" alt="${element.name}">
+                            ${element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : ''}
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
+                                <p class="card-text">
+                                    ${element.description}
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">${element.technologies}</small>
+                                </p>
+                            </div>
+                        </div>
+                    `)
+                }
+                image.onerror = function () {
+                    $("#projects .card-columns").append(`
+                        <div class="card${element.status == "Em desenvolvimento" ? ' development' : ''}">
+                            ${element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : ''}
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="${element.link}">${element.name}</a></h5>
+                                <p class="card-text">
+                                    ${element.description}
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">${element.technologies}</small>
+                                </p>
+                            </div>
+                        </div>
+                    `)
+                }
+
+            });
+
+            let t3 = setInterval(function () {
+                var cards = $('#projects .card-columns .card');
+                if (cards.length == projectsByType.length) {
+                    $('#projects .card-columns .loader').remove();
+                    clearInterval(t3);
+                }
+            }, 500);
+
+            
+            let t4 = setInterval(function () {
+
+                var cards = $('#projects .card-columns .card');
+                var sections = $('#skills .sections .section');
+                var otherSkillsList = $('.other-skills ul li');
+
+                if ( cards.length == projectsByType.length && sections.length == skillsByTechTypeAux.length && otherSkillsList.length == skillsByType.length ) {
+                    $(".dev-type-modal").modal('hide')
+                    clearInterval(t4);
+                }
+
+            }, 500);
+
+            
+
+        }, 3000);
+
 
 
     }
