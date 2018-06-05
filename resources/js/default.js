@@ -658,14 +658,14 @@ var projects = [
         "status": "concluído"
     },
     {
-        "name": "Seja Cachos",
+        "name": "Lummina",
         "type": "Front-end",
-        "logo": "https://cdn.awsli.com.br/400x300/529/529091/logo/5df0928596.png",
+        "logo": "",
         "technologies": "Bootstrap4, JavaScript, SASS",
         "description": "",
         "category": "Admake",
-        "link": "https://loja.sejacachos.com.br/",
-        "status": "concluído"
+        "link": "",
+        "status": "Em desenvolvimento"
     }
 ];
 var jobs = [
