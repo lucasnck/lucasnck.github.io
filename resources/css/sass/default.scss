@@ -82,8 +82,8 @@ a, a:hover {
                 a {
                     color: #FFFFFF;
                     &.active {
-                        color: #000000;
-                        text-shadow: 1px 1px #9c9c9c;
+                        color: #c3c3c3;
+                        text-shadow: none;
                     }
                 }
             }
@@ -325,12 +325,26 @@ a, a:hover {
             color: #FFFFFF;
         }
         ul {
+            padding: 0 20px;
             li {
-                padding: 10px 0;
-                .progress {
-                    border-radius: 0;
-                }
+                color: #FFFFFF;
             }
+        }
+    }
+
+   .sections, .other-skills {
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: transparent;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 6px;
+            background-color: transparent;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: #000000;
         }
     }
 

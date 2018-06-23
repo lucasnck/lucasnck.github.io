@@ -39,7 +39,7 @@ var menu = [
 var social = [
     {
         "title": "Facebook",
-        "link": "https://www.instagram.com/luscanck/",
+        "link": "https://www.facebook.com/luscanck/",
         "icon": "fab fa-facebook-f"
     },
     {
@@ -568,14 +568,34 @@ var projects = [
         "status": "Em desenvolvimento"
     },
     {
-        "name": "Dupé",
+        "name": "Dupé Calçados",
         "type": "Front-end",
-        "logo": "",
-        "technologies": "Typescript, jQuery, Twig, Bootstrap4, JavaScript, SASS",
+        "logo": "https://assets.xtechcommerce.com/assets/47429/1523305233/img/logo.png",
+        "technologies": "TypeScript, Bootstrap4, SASS, HTML5, Twig, jQuery",
         "description": "",
         "category": "Admake",
-        "link": "",
+        "link": "https://lojadupe1.xtechcommerce.com/",
         "status": "Em desenvolvimento"
+    },
+    {
+        "name": "Pitangasp",
+        "type": "Front-end",
+        "logo": "https://images.tcdn.com.br/606773/themes/68/img/logo/logo.png",
+        "technologies": "Bootstrap4, Twig, JavaScript, SASS, CSS, HTML5",
+        "description": "",
+        "category": "Admake",
+        "link": "https://www.pitangasp.com.br/",
+        "status": "concluído"
+    },
+    {
+        "name": "Grassy Café",
+        "type": "Front-end",
+        "logo": "https://www.grassycafe.com.br/static/store/logo-379841e1-e3b5-459f-af19-71c52d2ae467.png",
+        "technologies": "Bootstrap3, Angular, JavaScript, SASS, CSS, HTML5",
+        "description": "",
+        "category": "Admake",
+        "link": "https://grassycafe.com.br/",
+        "status": "concluído"
     },
     {
         "name": "Flor de Coco",
@@ -683,7 +703,7 @@ var jobs = [
         "name": "Secretaria da Educação do Estado de São Paulo",
         "logo": "resources/img/jobs/seesp.png",
         "post": "Servidor Público",
-        "description": "Servidor público efetivo, atuando com rotinas administrativas, atendimento ao público, elaboração do documentos e planilhas com excel, word, pwp, etc.",
+        "description": "Servidor público efetivo, atuando com rotinas administrativas, atendimento ao público, elaboração do documentos e planilhas com excel, word, manutenção de equipamentos, etc.",
         "category": "Efetivo",
         "link": "#",
         "start": "01/03/2013",
@@ -957,7 +977,7 @@ var Components = /** @class */ (function () {
                 section.appendTo("#skills .sections");
                 element.elements.forEach(function (skill) {
                     if (type == null || (skill.type == type || skill.type == "Full Stack")) {
-                        section.find("ul").append("\n                            <li data-name=\"" + skill.name + "\">\n                                <div class=\"progress\">\n                                    <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " + skill.knowledgePercentage + "%\" aria-valuenow=\"" + skill.knowledgePercentage + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                                        " + skill.name + "\n                                    </div>\n                                </div>\n                            </li>\n                        ");
+                        section.find("ul").append("\n                            <li data-name=\"" + skill.name + "\">\n                                " + (skill.knowledgePercentage < 30 ? skill.name + " (Iniciante)" : '') + "\n                                " + (skill.knowledgePercentage >= 30 && skill.knowledgePercentage < 60 ? skill.name + " (Intermediário)" : '') + "\n                                " + (skill.knowledgePercentage >= 60 && skill.knowledgePercentage <= 100 ? skill.name + " (Avançado)" : '') + "\n                            </li>\n                        ");
                     }
                 });
             });
@@ -972,10 +992,10 @@ var Components = /** @class */ (function () {
                 var image = new Image();
                 image.src = imageUrl;
                 image.onload = function () {
-                    $("#projects .card-columns").append("\n                        <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                            <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                            " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                <p class=\"card-text\">\n                                    " + element.description + "\n                                </p>\n                                <p class=\"card-text\">\n                                    <small class=\"text-muted\">" + element.technologies + "</small>\n                                </p>\n                            </div>\n                        </div>\n                    ");
+                    $("#projects .card-columns").append("\n                        <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                            <img class=\"card-img-top\" src=\"" + element.logo + "\" alt=\"" + element.name + "\">\n                            " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title\"><a href=\"" + element.link + "\" target=\"_blank\">" + element.name + "</a></h5>\n                                <p class=\"card-text\">\n                                    " + element.description + "\n                                </p>\n                                <p class=\"card-text\">\n                                    <small class=\"text-muted\">" + element.technologies + "</small>\n                                </p>\n                            </div>\n                        </div>\n                    ");
                 };
                 image.onerror = function () {
-                    $("#projects .card-columns").append("\n                        <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                            " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title\"><a href=\"" + element.link + "\">" + element.name + "</a></h5>\n                                <p class=\"card-text\">\n                                    " + element.description + "\n                                </p>\n                                <p class=\"card-text\">\n                                    <small class=\"text-muted\">" + element.technologies + "</small>\n                                </p>\n                            </div>\n                        </div>\n                    ");
+                    $("#projects .card-columns").append("\n                        <div class=\"card" + (element.status == "Em desenvolvimento" ? ' development' : '') + "\">\n                            " + (element.status == "Em desenvolvimento" ? '<span class="badge badge-dark">' + element.status + '</span>' : '') + "\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title\"><a href=\"" + element.link + "\" target=\"_blank\">" + element.name + "</a></h5>\n                                <p class=\"card-text\">\n                                    " + element.description + "\n                                </p>\n                                <p class=\"card-text\">\n                                    <small class=\"text-muted\">" + element.technologies + "</small>\n                                </p>\n                            </div>\n                        </div>\n                    ");
                 };
             });
             var t3 = setInterval(function () {
@@ -1036,7 +1056,7 @@ $(document).ready(function () {
         $("#header .col-menu ul").append("\n            <li>\n                <a class=\"nav-link\" href=\"" + element.link + "\" alt=\"" + element.title + "\">" + element.title + "</a>\n            </li>\n        ");
     });
     social.forEach(function (element) {
-        $("#header .col-social-links ul").append("\n            <li>\n                <a class=\"nav-link\" href=\"" + element.link + "\" alt=\"" + element.title + "\"><i class=\"" + element.icon + "\"></i></a>\n            </li>\n        ");
+        $("#header .col-social-links ul").append("\n            <li>\n                <a class=\"nav-link target=\"_blank\" href=\"" + element.link + "\" alt=\"" + element.title + "\"><i class=\"" + element.icon + "\"></i></a>\n            </li>\n        ");
     });
     skills.sort(Components.compareByKnowledge);
     Components.changeDevtype(null);
