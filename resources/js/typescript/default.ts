@@ -600,6 +600,16 @@ var projects = [
         "status": "concluído"
     },
     {
+        "name": "Gorila Shield",
+        "type": "Front-end",
+        "logo": "https://cdn.awsli.com.br/35/35541/logo/346d34074f.png",
+        "technologies": "Bootstrap4, TypeScript, JavaScript, SASS, HTML5, Loja Integrada",
+        "description": "",
+        "category": "Admake",
+        "link": "https://www.gorilashield.com.br/",
+        "status": "concluído"
+    },
+    {
         "name": "Ponto das Tintas",
         "type": "Front-end",
         "logo": "https://www.pontodastintas.com.br/static/store/Captura de Tela 2017-11-13 às 11-da541d43-9c1a-4045-b5e4-415fb279b8bc.png",
