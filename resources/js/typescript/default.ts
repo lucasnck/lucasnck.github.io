@@ -59,7 +59,7 @@ var social = [
     {
 
         "title": "Instagram",
-        "link": "https://www.instagram.com/luscanck/",
+        "link": "https://www.instagram.com/lucasnck/",
         "icon": "fab fa-instagram"
     },
     {
