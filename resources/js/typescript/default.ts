@@ -73,6 +73,12 @@ var social = [
         "title": "Github",
         "link": "https://github.com/lucasnck",
         "icon": "fab fa-github"
+    },
+    {
+
+        "title": "Spotify",
+        "link": "https://open.spotify.com/user/wh15y5gilc2rzany6blje0649?si=1ogxVcgtSLuPGmcvWOQUtA",
+        "icon": "fab fa-spotify"
     }
 ]
 
