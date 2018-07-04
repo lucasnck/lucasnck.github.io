@@ -44,7 +44,7 @@ var social = [
     },
     {
         "title": "Instagram",
-        "link": "https://www.instagram.com/luscanck/",
+        "link": "https://www.instagram.com/lucasnck/",
         "icon": "fab fa-instagram"
     },
     {
@@ -56,6 +56,11 @@ var social = [
         "title": "Github",
         "link": "https://github.com/lucasnck",
         "icon": "fab fa-github"
+    },
+    {
+        "title": "Spotify",
+        "link": "https://open.spotify.com/user/wh15y5gilc2rzany6blje0649?si=1ogxVcgtSLuPGmcvWOQUtA",
+        "icon": "fab fa-spotify"
     }
 ];
 var skills = [
@@ -525,6 +530,16 @@ var projects = [
         "description": "API for create and update files structures of a project object",
         "category": "autônomo",
         "link": "https://github.com/lucasnck/ProjectParser",
+        "status": "concluído"
+    },
+    {
+        "name": "Gorila Shield",
+        "type": "Front-end",
+        "logo": "https://cdn.awsli.com.br/35/35541/logo/346d34074f.png",
+        "technologies": "Bootstrap4, TypeScript, JavaScript, SASS, HTML5, Loja Integrada",
+        "description": "",
+        "category": "Admake",
+        "link": "https://www.gorilashield.com.br/",
         "status": "concluído"
     },
     {
